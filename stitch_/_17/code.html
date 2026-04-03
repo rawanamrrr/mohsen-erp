@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تعريف بنود الإنتاج | Abu Leila ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;family=Manrope:wght@400;600;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#2a4386",
+                        "on-surface": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#758dd5",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#4fa243",
+                        "secondary-container": "#fed488",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed": "#00174a",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-high": "#e6e8ea",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e9c176",
+                        "secondary-fixed": "#ffdea5",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#261900",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "outline": "#757682",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-secondary-container": "#785a1a",
+                        "on-surface-variant": "#444650",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "surface-tint": "#435b9f",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#005303",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c5c6d2",
+                        "primary": "#00113a",
+                        "background": "#f7f9fb",
+                        "tertiary-fixed": "#9ff88d",
+                        "tertiary": "#001a00",
+                        "tertiary-fixed-dim": "#84db74",
+                        "primary-container": "#002366",
+                        "tertiary-container": "#003101",
+                        "on-tertiary-fixed": "#002201",
+                        "secondary": "#775a19",
+                        "inverse-primary": "#b3c5ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Tajawal", "Manrope"],
+                        "body": ["Tajawal", "Plus Jakarta Sans"],
+                        "label": ["Tajawal", "Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Tajawal', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .accent-edge-primary { border-right: 4px solid #00113a; }
+        .accent-edge-secondary { border-right: 4px solid #775a19; }
+        .glass-fab {
+            background: rgba(67, 91, 159, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar (Right-side Anchor) -->
+<aside class="flex flex-col fixed right-0 top-0 h-screen z-50 py-6 bg-[#f2f4f6] dark:bg-[#00113a] w-64 no-border shadow-lg font-['Tajawal','Manrope'] text-[14px] font-semibold">
+<div class="px-6 mb-6">
+<h1 class="text-lg font-black text-[#00113a] dark:text-white mb-1">Abu Leila</h1>
+<p class="text-[10px] text-slate-500 font-medium tracking-wider uppercase">Enterprise HR &amp; Payroll</p>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#00113a] text-[#775a19] border-r-4 border-[#775a19] shadow-sm translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span>HR</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Sales</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Finance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/50 hover:text-[#775a19] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-primary text-white rounded-xl font-bold shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Quick Action
+            </button>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="mr-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex flex-row-reverse justify-between items-center w-full px-6 py-3 bg-white/80 dark:bg-[#00113a]/80 backdrop-blur-xl docked full-width top-0 z-40 border-b border-slate-100 dark:border-slate-800 shadow-sm font-['Tajawal','Manrope'] text-sm font-medium">
+<div class="flex items-center gap-4">
+<div class="relative">
+<input class="bg-surface-container-low border-none rounded-lg py-1.5 pr-10 pl-4 text-xs w-64 focus:ring-2 focus:ring-secondary/20" placeholder="بحث سريع..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-2 border-r pr-4 border-slate-200">
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full border-2 border-secondary/20" data-alt="professional portrait of a middle-aged male executive in a sharp business suit with a confident smile against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtgHjYLc3BLEUbdx6WSO76JGT2ixF8QZITmLj25o5Rz2PUQ3JT-e2YJsaKXb86Y2rnarxELMY_7Rkc98BNg9iNN1IZ2aU3weZnW318WDYaMOIcyaYC0qC1am3xQWJslu72lASilK8YksV5txelerhEUHLqJaNUftJiTGx1B8eu0UpHrLd_HhonQfjyFidDFTvKI0tZaI_55_aZvBQVDvW_XrNTLVeQbz5Cuz7ld2VAlL-Gapuv_JPVlb0w680jhKUMMx0NcOoh9w3t"/>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#00113a] dark:text-white">Abu Leila ERP</span>
+<nav class="flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors py-1 px-2 rounded" href="#">الموظفين</a>
+<a class="text-[#775a19] font-bold py-1 px-2 rounded" href="#">بنود الإنتاج</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors py-1 px-2 rounded" href="#">كشوف المرتبات</a>
+</nav>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Page Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-[30px] font-black text-primary leading-tight">تعريف بنود الإنتاج</h2>
+<p class="text-slate-500 mt-1">إدارة أسعار العمليات والمهام لعمال الإنتاج بنظام القطعة</p>
+</div>
+<button class="flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span>إضافة عملية جديدة</span>
+</button>
+</div>
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm accent-edge-primary flex flex-col justify-between">
+<span class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-4">إجمالي العمليات</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-primary">42</span>
+<span class="text-xs text-secondary font-bold">بند مفعل</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm accent-edge-secondary flex flex-col justify-between">
+<span class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-4">متوسط سعر القطعة</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-primary">8.50</span>
+<span class="text-xs text-secondary font-bold">ج.م</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm accent-edge-primary flex flex-col justify-between">
+<span class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-4">الأكثر طلباً</span>
+<div class="flex items-baseline gap-2">
+<span class="text-lg font-bold text-primary">تركيب الياقة</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm accent-edge-secondary flex flex-col justify-between">
+<span class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-4">آخر تحديث</span>
+<div class="flex items-baseline gap-2">
+<span class="text-lg font-bold text-primary">منذ ساعتين</span>
+</div>
+</div>
+</div>
+<!-- Main Data Table Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Table Filters -->
+<div class="p-6 border-b border-slate-50 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1 max-w-md">
+<div class="relative w-full">
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2.5 pr-11 pl-4 text-sm focus:ring-2 focus:ring-secondary/20" placeholder="البحث باسم العملية أو الكود..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-low text-slate-600 rounded-lg text-sm font-semibold hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            تصفية
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-low text-slate-600 rounded-lg text-sm font-semibold hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                            تصدير
+                        </button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 text-slate-500 text-[11px] font-black tracking-widest uppercase">
+<th class="px-8 py-4">كود العملية</th>
+<th class="px-8 py-4">اسم العملية</th>
+<th class="px-8 py-4">القسم التابع</th>
+<th class="px-8 py-4 text-center">سعر القطعة (ج.م)</th>
+<th class="px-8 py-4">الحالة</th>
+<th class="px-8 py-4">تاريخ التعديل</th>
+<th class="px-8 py-4 text-left">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-primary">OP-1002</td>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">تركيب جيب أمامي</span>
+<span class="text-[10px] text-slate-400">خياطة مزدوجة</span>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-slate-600">قسم الخياطة (A)</td>
+<td class="px-8 py-5 text-center">
+<span class="text-lg font-black text-secondary">5.00</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-[#dcfce7] text-[#166534] rounded-full text-[10px] font-black tracking-wider uppercase">نشط</span>
+</td>
+<td class="px-8 py-5 text-xs text-slate-500">2023/10/12</td>
+<td class="px-8 py-5 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-primary">OP-1045</td>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">تركيب الياقة (Collar)</span>
+<span class="text-[10px] text-slate-400">تشطيب فاخر</span>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-slate-600">قسم التشطيب</td>
+<td class="px-8 py-5 text-center">
+<span class="text-lg font-black text-secondary">12.50</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-[#dcfce7] text-[#166534] rounded-full text-[10px] font-black tracking-wider uppercase">نشط</span>
+</td>
+<td class="px-8 py-5 text-xs text-slate-500">2023/10/15</td>
+<td class="px-8 py-5 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-primary">OP-2011</td>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">تركيب الأزرار</span>
+<span class="text-[10px] text-slate-400">ماكينة أوتوماتيك</span>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-slate-600">قسم التجهيز</td>
+<td class="px-8 py-5 text-center">
+<span class="text-lg font-black text-secondary">2.75</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-[#fef9c3] text-[#854d0e] rounded-full text-[10px] font-black tracking-wider uppercase">مراجعة</span>
+</td>
+<td class="px-8 py-5 text-xs text-slate-500">2023/10/18</td>
+<td class="px-8 py-5 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-primary">OP-1088</td>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">كي نهائي وتغليف</span>
+<span class="text-[10px] text-slate-400">ستاندرد تصدير</span>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-slate-600">قسم التعبئة</td>
+<td class="px-8 py-5 text-center">
+<span class="text-lg font-black text-secondary">4.20</span>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-[#dcfce7] text-[#166534] rounded-full text-[10px] font-black tracking-wider uppercase">نشط</span>
+</td>
+<td class="px-8 py-5 text-xs text-slate-500">2023/10/20</td>
+<td class="px-8 py-5 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>
+<button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="p-6 border-t border-slate-50 flex items-center justify-between">
+<span class="text-xs text-slate-500 font-medium">عرض 1-10 من أصل 42 عملية</span>
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+<button class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-lg">1</button>
+<button class="px-3 py-1 text-slate-600 text-xs font-bold hover:bg-slate-100 rounded-lg">2</button>
+<button class="px-3 py-1 text-slate-600 text-xs font-bold hover:bg-slate-100 rounded-lg">3</button>
+<button class="p-2 text-slate-400 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+</div>
+</div>
+</div>
+<!-- Asymmetric Content: Informational Panel & Quick View -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-primary-container p-8 rounded-xl relative overflow-hidden text-white shadow-lg">
+<div class="relative z-10 flex justify-between items-start">
+<div class="max-w-md">
+<h3 class="text-xl font-black mb-3">تحديث جماعي للأسعار؟</h3>
+<p class="text-sm text-primary-fixed leading-relaxed opacity-90">يمكنك تعديل أسعار كافة العمليات بنسبة مئوية محددة أو مبلغ ثابت لتسهيل إدارة الزيادات السنوية في الأجور.</p>
+<button class="mt-6 px-6 py-2.5 bg-secondary text-white rounded-lg font-bold text-sm shadow-md hover:bg-secondary-fixed-dim transition-colors">بدء التعديل الجماعي</button>
+</div>
+<span class="material-symbols-outlined text-8xl opacity-10" data-icon="trending_up">trending_up</span>
+</div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-slate-50">
+<h3 class="text-sm font-black text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+                        آخر التعديلات
+                    </h3>
+<div class="space-y-6">
+<div class="flex gap-4 relative">
+<div class="w-2 h-2 rounded-full bg-secondary mt-1.5 ring-4 ring-secondary/10"></div>
+<div class="absolute right-[3px] top-4 bottom-[-24px] w-[2px] bg-slate-100"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">تم رفع سعر 'تركيب الياقة'</p>
+<p class="text-[10px] text-slate-400 mt-0.5">من 10.00 إلى 12.50 ج.م</p>
+<span class="text-[9px] text-slate-400 uppercase font-bold mt-1 block">بواسطة: أحمد علي - منذ ساعتين</span>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="w-2 h-2 rounded-full bg-slate-300 mt-1.5 ring-4 ring-slate-100"></div>
+<div class="absolute right-[3px] top-4 bottom-[-24px] w-[2px] bg-slate-100"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">إضافة عملية جديدة 'تطريز شعار'</p>
+<p class="text-[10px] text-slate-400 mt-0.5">السعر: 15.00 ج.م</p>
+<span class="text-[9px] text-slate-400 uppercase font-bold mt-1 block">بواسطة: سارة محمود - أمس</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-slate-300 mt-1.5 ring-4 ring-slate-100"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">تعطيل بند 'التعبئة اليدوية'</p>
+<p class="text-[10px] text-slate-400 mt-0.5">نقل العمل للمركز الآلي</p>
+<span class="text-[9px] text-slate-400 uppercase font-bold mt-1 block">بواسطة: الإدارة - 12 أكتوبر</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Signature Floating Glass FAB -->
+<button class="glass-fab fixed bottom-8 left-8 w-16 h-16 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</button>
+<!-- Footer Info -->
+<footer class="mt-auto px-8 py-6 flex justify-between items-center text-[10px] text-slate-400 font-bold tracking-widest uppercase border-t border-slate-100">
+<span>© 2023 ABU LEILA ERP - SOVEREIGN EDITION</span>
+<div class="flex gap-6">
+<a class="hover:text-secondary transition-colors" href="#">الدعم الفني</a>
+<a class="hover:text-secondary transition-colors" href="#">سياسة الخصوصية</a>
+</div>
+</footer>
+</main>
+</body></html>

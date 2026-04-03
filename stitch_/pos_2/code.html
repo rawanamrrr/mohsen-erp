@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>أبو ليلة ERP - واجهة البيع اللمسية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#005303",
+              "on-primary-container": "#758dd5",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-secondary-fixed-variant": "#5d4201",
+              "tertiary-fixed-dim": "#84db74",
+              "surface-container": "#eceef0",
+              "outline": "#757682",
+              "on-error-container": "#93000a",
+              "tertiary": "#001a00",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#ffdea5",
+              "tertiary-fixed": "#9ff88d",
+              "on-primary-fixed-variant": "#2a4386",
+              "primary-fixed": "#dbe1ff",
+              "outline-variant": "#c5c6d2",
+              "surface-tint": "#435b9f",
+              "on-tertiary-fixed": "#002201",
+              "surface": "#f7f9fb",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary": "#775a19",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-surface": "#2d3133",
+              "background": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "surface-dim": "#d8dadc",
+              "on-secondary-container": "#785a1a",
+              "on-tertiary-container": "#4fa243",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-container": "#003101",
+              "inverse-primary": "#b3c5ff",
+              "primary": "#00113a",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f2f4f6",
+              "inverse-on-surface": "#eff1f3",
+              "on-surface-variant": "#444650",
+              "on-primary-fixed": "#00174a",
+              "surface-bright": "#f7f9fb",
+              "error-container": "#ffdad6",
+              "primary-container": "#002366",
+              "on-secondary-fixed": "#261900",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "Tajawal"],
+              "body": ["Plus Jakarta Sans", "Tajawal"],
+              "label": ["Plus Jakarta Sans", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-fab { background: rgba(67, 91, 159, 0.8); backdrop-filter: blur(24px); }
+        .accent-edge-primary { border-right: 4px solid #00113a; }
+        .accent-edge-secondary { border-right: 4px solid #775a19; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c5c6d2; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-[#00113a] dark:bg-[#00081d] text-white docked full-width top-0 z-50 no-border shadow-lg flex justify-between items-center w-full px-6 py-3 fixed">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-white font-headline">Abu Leila ERP</span>
+<nav class="hidden md:flex gap-6 font-['Manrope','Tajawal'] font-bold text-sm">
+<a class="text-white/80 hover:text-white transition-colors" href="#">الرئيسية</a>
+<a class="text-white/80 hover:text-white transition-colors" href="#">التقارير</a>
+<a class="text-white/80 hover:text-white transition-colors" href="#">الإعدادات</a>
+</nav>
+</div>
+<div class="flex-1 max-w-md mx-12">
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-white/50">barcode_scanner</span>
+<input class="w-full bg-white/10 border-none rounded-xl py-2 pr-10 pl-4 text-sm text-white placeholder-white/40 focus:ring-2 focus:ring-secondary/50 transition-all" placeholder="مسح الباركود أو البحث السريع..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors scale-95 active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors scale-95 active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="الملف الشخصي للمستخدم" class="w-10 h-10 rounded-full border-2 border-secondary object-cover" data-alt="professional male executive in a suit smiling, corporate profile picture with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2j1yHgAXxJro1lMdIEv8usPOeR8oxF8D2WF1gs4ANbO0MoP5hh11djcILXWcYnlzVqcRe4XS5H2tW9gu4aODgmaNvrB1X_D4CaDiVGlV38Cp3yMj7tzhWjRTWDhh76dMTkx5X9Dwb8B8ASQYX9ZG-5Y0y8IYH4JCHntbXobQFBNMQHd-O6acD4aQcV27_n0AowuzC9H8CkeWZRgXEm7fFLH4bvDk8T_znp0mpk3NJqIjpJtSOcwZjaMAQt5eFPptK96HhTOoKQeFZ"/>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<aside class="fixed right-0 top-0 h-full w-64 bg-[#f2f4f6] dark:bg-[#1a1c1e] shadow-sm flex flex-col pt-20 pb-6 z-40 hidden md:flex font-['Plus_Jakarta_Sans','Tajawal'] text-sm font-medium">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#00113a] dark:text-white leading-tight">أبو ليلة ERP</h2>
+<p class="text-[10px] text-slate-500">نظام إدارة الموارد</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>المخزون</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>المشتريات</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 bg-white dark:bg-[#00113a] text-[#00113a] dark:text-[#775a19] border-r-4 border-[#775a19] font-bold" href="#">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span>المبيعات</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>العملاء</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>الحسابات</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary text-white rounded-xl shadow-lg active:scale-95 transition-transform font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+<span>نقطة بيع جديدة</span>
+</button>
+<button class="mt-4 flex items-center gap-3 px-6 py-2 text-red-600 hover:bg-red-50 rounded-lg w-full transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:mr-64 pt-16 flex h-screen overflow-hidden">
+<!-- Products Section (Grid) -->
+<section class="flex-1 flex flex-col p-6 overflow-hidden">
+<!-- Tabs -->
+<div class="flex items-center gap-2 mb-6 bg-surface-container-low p-1.5 rounded-2xl w-fit">
+<button class="px-8 py-2.5 rounded-xl bg-white text-primary font-bold shadow-sm transition-all">الكل</button>
+<button class="px-8 py-2.5 rounded-xl text-slate-500 hover:bg-white/50 transition-all">رجالي</button>
+<button class="px-8 py-2.5 rounded-xl text-slate-500 hover:bg-white/50 transition-all">حريمي</button>
+<button class="px-8 py-2.5 rounded-xl text-slate-500 hover:bg-white/50 transition-all">أطفال</button>
+<button class="px-8 py-2.5 rounded-xl text-slate-500 hover:bg-white/50 transition-all">إكسسوارات</button>
+</div>
+<!-- Bento Grid of Products -->
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-1">
+<div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="قميص رجالي فاخر" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="high-quality navy blue mens dress shirt on a minimalist light grey background, professional fashion photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkWFhRDKMBeZyDLQEGu2Xylf7Lw6TIEVH1E8-U0ibpVDgBp8AwTcxJ_orPakvi0yxEbzxBGwdKo0EQKDm0pfIhVQn38AgW20MDLT_fTNvAtykp3h1OGeRdE8jzGevGHzTo07nMgD5l1DHm0VplM8TZ0_AlniaHOiB8s4Yg-8lQBWoRSi_kK-8WPemswRe0awMMS_sgmqCALvhHiHr5qkyQKyioKtL9YIJeYJUoVSzEdLfAnJuLx9_MmiftqPMG9LoGeCHPJcRdhjfo"/>
+<div class="absolute top-2 left-2 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Top Seller</div>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">قميص قطن - أزرق داكن</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">850 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="حذاء رياضي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="bright red performance running shoe on a sleek white reflective surface, dynamic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMBYou74ydF1AxkE9dBzcMpOCQiYL_0DPbE0SvgshvfeC26A22GZ8C0Le81OCeAF52znakzxL_MV6M0yXZEKXHcwHf62L7mbSeXLIuwcQklOlSwB4fYXGhhk8O0wwuTlTo7GAaGPKKQ9y7jSXZcLeH7RGzIypYD17rwFfy6xkFpuZP0fl7rPOsIm2VvfadBFoCPFwFCQMd2Ip_qlSGEm4ljlnn_Zfrvp9YewpWCkfAKlf11E3LCSXW3XA2UtBn6O7mqomnocn2N6A-"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">حذاء ركض سبرينت</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">1,200 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="بنطلون جينز" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="classic blue denim jeans folded neatly on a wooden texture background, high resolution textile detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT70d8CTs6sOT2fkqhTZKB9j8NQHHciIaJo-IrIXyEx4l2S_KTf-z6nOe2rnO8mjeMIlsLno5ySzTr1fyk3DU-3QHYlM7yZq7UQCYLzjW55L8xY12Fra1a8FR9pWevL3SOMpJ-7QwD1yGwzwEsSlAFJQ3LP7PoPsmQSnw4ZyD9QUcHRVmdlT9aLBBX-CR2xkflKH4LqAO16c4aMPni8RGNY8ZoMbnaQw8fh5RGdSDZ9I4cPNh-NreQ3t9TL2m--555-dS_jVeEAJS5"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">بنطلون جينز كلاسيك</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">950 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="ساعة ذكية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern minimalist silver smart watch with white band, elegant lifestyle tech photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQevnOZYSUNDKAJfroDw6WgOFF_iTDPOJnz9aYTKn7NenrSMCaFnf5P5NOaiUadJ9FcffmHP4C2pFmxAZsFeC6NgFvBUmAomshLZScPkwuzNFItOYfuHXpfAHNu7A9vMaU--E1lE7xK-Un8RS1vhIufXrYd0BnXlslDwYNAj9GArTghP1ohhsrS8s2yZtlWoAezTj8BbdIJEH7f20z3xHwC4CEx2yvrMSrsDxeWWw_2R40LafTihFNLSULKulnVwCooqkJPZwOZTU"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">ساعة ألترا الذكية</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">3,400 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="تيشيرت" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="plain high quality black cotton t-shirt on a neutral grey background, studio lighting for fashion commerce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu7t9h4MnygQjxWj1U58xfr1tYO3zQu6EDL1Sr7NQPD5aZEkqwsKyUMg32JSVsRoCQvIFU5LwA2veMKvJqqhuVKPmbc4E2zmG3f6Xjc5OIyZGHubxJKERvL7AJoK1oiyYZq3uPRtBvxrDazMvdCSJYKTDtrMjAo1SIt5fomhb7d7svp646n38Abxq9KqAmOrVOyUrj5rnGJtB8gH1qdOZxDdlvaqLEUiNRVQFybyDzBwWcySpH0rARUvuEvyJoBo5qyn4gW1A_rZpS"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">تيشيرت قطن فاخر</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">450 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeat products to fill grid -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden flex flex-col border border-transparent hover:border-secondary/20">
+<div class="h-40 overflow-hidden relative">
+<img alt="حذاء رسمي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="luxury brown leather formal dress shoes polished to a high shine on a dark surface, sophisticated studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzMzkEENdde3yT09S7b6ZE2SrTtpNAtiWXXtTpezkzW2nN8g5OvqU9lZbPXf-6V13ApSGlyNWocES2aXA-jcBxEvraBZMSiPW3OQsOFfiani-tKfENmXbCs82JFQdPbzenNE9QH7p8bJe5h1IcHTfR0zoQ-LV-bnPs6UfO7JrIPQeJw450wNkudcl_YpHqo8-kD042Qy6zgaYDWFF5x13C2vCzs3lXn4pDfHsHllDr--Sd2ObH85SXhhwbNo1kJomRBuW2ZYgveC-H"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h3 class="text-sm font-bold text-primary mb-1">حذاء جلد طبيعي</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-black text-lg">1,550 <span class="text-xs font-normal">ج.م</span></span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vertical Shopping Cart (Sidebar Right) -->
+<section class="w-[400px] bg-white shadow-2xl flex flex-col z-10 border-r border-surface-container">
+<!-- Cart Header -->
+<div class="p-6 border-b border-surface-container-low flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+<h2 class="text-lg font-bold text-primary">سلة المشتريات</h2>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">3 أصناف</span>
+</div>
+<!-- Cart Items -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+<!-- Item 1 -->
+<div class="flex gap-4 bg-surface p-3 rounded-xl accent-edge-primary">
+<img alt="item" class="w-16 h-16 rounded-lg object-cover" data-alt="close-up of navy blue shirt fabric and collar on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb7SXJdui2B68vreVL6af8aZPu3P_1MwnZ6tJ84otiuMiZeRizx4lEfzs4DsQDHfCNjauKpgccE-UGoGQeaZLVvHj0hiT2ZQy7D_LDVaEJ7oqWkvcs3OwZJjsdD1b03Xn5PoHLB0QOXoDe2J6r5iy4heT9YYRJeyhwfncJtFCCObWHzYANzTUMMrdRL2GAJDWBWeDWDy7O1bZQyIgi6fPW6nSi_okWp3duexpAQMIHro2YTlDOqPKlZGmnlQaOfUbgdhta4YeFwgZe"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-primary">قميص قطن - أزرق داكن</h4>
+<p class="text-xs text-slate-500 mb-2">مقاس: L | لون: أزرق</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">remove</span></button>
+<span class="text-sm font-bold">1</span>
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<span class="font-bold text-primary">850 ج.م</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 bg-surface p-3 rounded-xl accent-edge-primary">
+<img alt="item" class="w-16 h-16 rounded-lg object-cover" data-alt="red running shoe details focusing on the sole and materials" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_5d7WP963CZkpILnpRDWOXzdBnRg9NNkd11OKO6hXoTEUcv53LSV64xHaGh_bVUwb-V9RRantjOM7-O-dkmWlEcwPlZBg2PTX-nHmGWjHf6mj35socjf6Ty5CSVpcRe1s6KoeCUVS-f_ToWsZJpVVfpKOlE-3Vti7TJfmK52WyiNQ2cjyQKV4bnQw2RRmbX_bBHNixoB5JnMc3bADsHe-MkAc-kkwia-7yRc79aTJTrkbrpt5b9AoxeIg769RXV3z2B0RL62IzMq"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-primary">حذاء ركض سبرينت</h4>
+<p class="text-xs text-slate-500 mb-2">مقاس: 42 | لون: أحمر</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">remove</span></button>
+<span class="text-sm font-bold">1</span>
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<span class="font-bold text-primary">1,200 ج.م</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 bg-surface p-3 rounded-xl accent-edge-primary">
+<img alt="item" class="w-16 h-16 rounded-lg object-cover" data-alt="silver smart watch face with digital display, close-up details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtEMtHx9JVrhikhxLsVez-2EOHOPUCl03yzstEBVBf9z_iMLBsqye70cvtbRXeKl6frROGmjqTsbWycWH5gn2HB_zmIH9YrUzQwlae13f_68YwICSDVaT9UzPTuYbD0WHTQCc9iBNadFSfbCa8Jhl73m2JfAV69egZsFscRoXsSzhWw3jdTuNex-uq0dZDiHvP4HYxoHVGmXy6aAhma6uWX9W6QZDq5fEH8m1SXnaVZiloJKS6rU1kwtZe0qPr-DqRCVlrf-qo34W8"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-primary">ساعة ألترا الذكية</h4>
+<p class="text-xs text-slate-500 mb-2">نسخة مطورة</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">remove</span></button>
+<span class="text-sm font-bold">1</span>
+<button class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<span class="font-bold text-primary">3,400 ج.م</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary & Actions -->
+<div class="p-6 bg-surface-container-low">
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">الإجمالي الفرعي</span>
+<span class="text-primary font-medium">5,450.00 ج.م</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">الضريبة (14%)</span>
+<span class="text-primary font-medium">763.00 ج.م</span>
+</div>
+<div class="flex justify-between text-xl font-black mt-4 pt-4 border-t border-slate-300">
+<span class="text-primary">الإجمالي</span>
+<span class="text-secondary">6,213.00 ج.م</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center gap-1 py-4 px-4 bg-white border-2 border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all scale-98 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined">print</span>
+<span class="text-xs">طباعة مسودة</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 py-4 px-4 bg-secondary text-white rounded-xl font-black hover:opacity-90 transition-all scale-98 active:scale-95 shadow-lg">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-xs">دفع كاش (F1)</span>
+</button>
+</div>
+<button class="w-full mt-4 flex items-center justify-center gap-2 py-5 bg-primary text-white rounded-xl font-black text-lg hover:bg-primary/90 transition-all scale-98 active:scale-95 shadow-xl">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span>تأكيد وطباعة الفاتورة</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Glassmorphism) -->
+<button class="fixed bottom-8 left-8 w-16 h-16 rounded-full glass-fab text-white shadow-2xl flex items-center justify-center scale-100 hover:scale-110 active:scale-90 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl">calculate</span>
+</button>
+</body></html>

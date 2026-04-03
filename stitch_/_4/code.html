@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#2d3133",
+              "on-secondary-fixed": "#261900",
+              "background": "#f7f9fb",
+              "on-primary-fixed": "#00174a",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary-container": "#758dd5",
+              "surface-container-low": "#f2f4f6",
+              "secondary-fixed": "#ffdea5",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#005303",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#003101",
+              "surface-tint": "#435b9f",
+              "surface-dim": "#d8dadc",
+              "tertiary": "#001a00",
+              "on-background": "#191c1e",
+              "primary": "#00113a",
+              "surface-container": "#eceef0",
+              "outline": "#757682",
+              "on-tertiary-container": "#4fa243",
+              "on-secondary-container": "#785a1a",
+              "surface-bright": "#f7f9fb",
+              "inverse-on-surface": "#eff1f3",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#002201",
+              "on-primary-fixed-variant": "#2a4386",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#84db74",
+              "surface": "#f7f9fb",
+              "secondary-container": "#fed488",
+              "primary-container": "#002366",
+              "on-surface-variant": "#444650",
+              "outline-variant": "#c5c6d2",
+              "primary-fixed": "#dbe1ff",
+              "tertiary-fixed": "#9ff88d",
+              "surface-container-highest": "#e0e3e5",
+              "on-secondary-fixed-variant": "#5d4201",
+              "secondary": "#775a19",
+              "on-surface": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              "inverse-primary": "#b3c5ff",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#e0e3e5"
+            },
+            fontFamily: {
+              "headline": ["Tajawal", "Manrope"],
+              "body": ["Plus Jakarta Sans", "Tajawal"],
+              "label": ["Plus Jakarta Sans", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- SideNavBar (Right-to-Left context) -->
+<aside class="flex flex-col h-screen fixed right-0 w-64 z-50 text-right bg-[#f2f4f6] dark:bg-[#00113a] shadow-lg border-l-0">
+<div class="p-6">
+<div class="text-2xl font-bold text-[#00113a] dark:text-[#775a19]">أبو ليلة</div>
+<div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">نظام إدارة الموارد</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Tajawal'] text-sm font-medium">لوحة القيادة</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Tajawal'] text-sm font-medium">المخازن</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Tajawal'] text-sm font-medium">المشتريات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Tajawal'] text-sm font-medium">المبيعات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white dark:bg-[#435b9f]/20 text-[#00113a] dark:text-white border-r-4 border-[#775a19] font-bold shadow-inner" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Tajawal'] text-sm font-medium">العملاء</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-['Tajawal'] text-sm font-medium">المالية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-['Tajawal'] text-sm font-medium">الموارد البشرية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Tajawal'] text-sm font-medium">التقارير</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/5 transition-transform duration-200 hover:translate-x-[-4px]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Tajawal'] text-sm font-medium">الإعدادات</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="flex items-center gap-3 px-4 py-3 w-full rounded-xl text-error hover:bg-error-container/20 transition-all duration-200">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-['Tajawal'] text-sm font-medium">تسجيل الخروج</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="mr-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex flex-row-reverse justify-between items-center w-full px-8 py-4 bg-white/80 dark:bg-[#00113a]/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-bold text-[#00113a] dark:text-white">أحمد المحمدي</div>
+<div class="text-[10px] text-slate-500 dark:text-slate-400 tracking-wider uppercase">مدير الحسابات</div>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-[#775a19]/20 object-cover" data-alt="professional corporate headshot of a middle-eastern man in a business suit with a friendly confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATduI1bXn7wAhyG-mM3dW5vol2LsJ4K78u9VAwOVQIVtQGslOZHJln_n-8m4XsvwqsAOl-ks8SC3Q_ZCWSoUKRfOXAh0cDW1MSf1rOelmsqudEZ8nLaidUZGPWGwEmbYqgJ-tN6mchFjARmh_CZSFdbvqjUV3NSWFWRLdpwzYaXp-82SoqzEj7o7Z-5Wq5LS2zcZZ2ODGKkcuJaTyMCxr_CyKjcTF04AyAkpETKhAOdR8VWSSdn0gE6Pec5ELsWKBNQVaPxt0Df8m5"/>
+</div>
+<div class="h-6 w-[1px] bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pr-10 pl-4 py-2 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="بحث سريع..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="p-8 space-y-8">
+<!-- Customer Overview Header -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-r-4 border-secondary">
+<div class="z-10">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-secondary-container/30 text-secondary text-[10px] font-bold rounded-full uppercase tracking-widest">عميل آجل (Credit)</span>
+<span class="text-slate-400 text-sm">#CUST-88291</span>
+</div>
+<h1 class="text-3xl font-black text-primary mb-1">شركة النيل للتجارة والاستيراد</h1>
+<p class="text-slate-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        المنطقة الصناعية، التجمع الخامس، القاهرة
+                    </p>
+</div>
+<div class="flex items-center gap-8 z-10">
+<div class="text-left">
+<div class="text-xs text-slate-500 font-bold mb-1">الحد الائتماني المتاح</div>
+<div class="text-2xl font-black text-secondary">100,000 ج.م</div>
+<div class="w-32 h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full w-[65%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="flex items-center justify-center gap-2 bg-primary text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-xl">add_card</span>
+<span>إضافة دفعة</span>
+</button>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Filters & Actions Bar -->
+<section class="flex flex-col lg:flex-row gap-4 justify-between items-end">
+<div class="w-full lg:w-auto flex flex-wrap gap-4 items-end">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-slate-500 mr-2">من تاريخ</label>
+<input class="bg-white border-none rounded-xl px-4 py-2.5 shadow-sm text-sm focus:ring-2 focus:ring-secondary/20" type="date"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-slate-500 mr-2">إلى تاريخ</label>
+<input class="bg-white border-none rounded-xl px-4 py-2.5 shadow-sm text-sm focus:ring-2 focus:ring-secondary/20" type="date"/>
+</div>
+<div class="flex flex-col gap-1.5 min-w-[200px]">
+<label class="text-xs font-bold text-slate-500 mr-2">نوع الحركة</label>
+<select class="bg-white border-none rounded-xl px-4 py-2.5 shadow-sm text-sm focus:ring-2 focus:ring-secondary/20">
+<option>الكل</option>
+<option>فواتير مبيعات</option>
+<option>سندات قبض</option>
+<option>مرتجع مبيعات</option>
+</select>
+</div>
+<button class="bg-white text-primary p-2.5 rounded-xl shadow-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white text-slate-700 px-5 py-2.5 rounded-xl font-bold shadow-sm hover:bg-slate-50 border border-slate-100 transition-all">
+<span class="material-symbols-outlined text-xl">download</span>
+<span>تصدير Excel</span>
+</button>
+<button class="flex items-center gap-2 bg-white text-slate-700 px-5 py-2.5 rounded-xl font-bold shadow-sm hover:bg-slate-50 border border-slate-100 transition-all">
+<span class="material-symbols-outlined text-xl">print</span>
+<span>طباعة الكشف</span>
+</button>
+</div>
+</section>
+<!-- Summary Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white p-6 rounded-xl shadow-sm border-r-4 border-primary overflow-hidden relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary-container/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">إجمالي المدين</span>
+</div>
+<div class="text-2xl font-black text-primary">145,250.00 <span class="text-sm font-medium opacity-60">ج.م</span></div>
+<p class="text-xs text-slate-400 mt-2">مجموع كافة المبيعات والديون</p>
+<div class="absolute -left-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">trending_up</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 rounded-xl shadow-sm border-r-4 border-tertiary-container overflow-hidden relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-tertiary-fixed/20 p-3 rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">إجمالي الدائن</span>
+</div>
+<div class="text-2xl font-black text-on-tertiary-fixed-variant">82,400.00 <span class="text-sm font-medium opacity-60">ج.م</span></div>
+<p class="text-xs text-slate-400 mt-2">مجموع المتحصلات والخصومات</p>
+<div class="absolute -left-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">price_check</span>
+</div>
+</div>
+<!-- Card 3 (Balance) -->
+<div class="bg-primary p-6 rounded-xl shadow-lg border-r-4 border-secondary overflow-hidden relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-secondary/20 p-3 rounded-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">balance</span>
+</div>
+<span class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">الرصيد الحالي</span>
+</div>
+<div class="text-2xl font-black text-white">62,850.00 <span class="text-sm font-medium opacity-60 text-slate-300">ج.م</span></div>
+<p class="text-xs text-slate-300 mt-2">المستحق للدفع حالياً</p>
+<div class="absolute -left-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl text-secondary">verified</span>
+</div>
+</div>
+</section>
+<!-- Account Statement Table -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 flex justify-between items-center border-b border-slate-50">
+<h2 class="text-lg font-bold text-primary">جدول كشف الحساب التفصيلي</h2>
+<div class="text-xs text-slate-400 font-medium">عرض آخر 50 حركة</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right">
+<thead class="bg-slate-50">
+<tr>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">التاريخ</th>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">البيان / النوع</th>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">رقم المرجع</th>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">مدين (ج.م)</th>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">دائن (ج.م)</th>
+<th class="px-6 py-4 text-xs font-black text-slate-500 uppercase">الرصيد (ج.م)</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Entry 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-700">2023/10/25</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-bold text-primary">فاتورة مبيعات آجل</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">INV-2023-0091</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">12,500.00</td>
+<td class="px-6 py-4 text-sm text-slate-300">0.00</td>
+<td class="px-6 py-4 text-sm font-black text-slate-900">62,850.00</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-400 hover:text-secondary"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-700">2023/10/20</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-sm font-bold text-on-tertiary-container">سند قبض نقدي</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">PYMT-4402</td>
+<td class="px-6 py-4 text-sm text-slate-300">0.00</td>
+<td class="px-6 py-4 text-sm font-bold text-on-tertiary-container">5,000.00</td>
+<td class="px-6 py-4 text-sm font-black text-slate-900">50,350.00</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-400 hover:text-secondary"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-700">2023/10/18</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-sm font-bold text-error">مرتجع مبيعات</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">RET-0112</td>
+<td class="px-6 py-4 text-sm text-slate-300">0.00</td>
+<td class="px-6 py-4 text-sm font-bold text-error">1,200.00</td>
+<td class="px-6 py-4 text-sm font-black text-slate-900">55,350.00</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-400 hover:text-secondary"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-700">2023/10/15</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-bold text-primary">فاتورة مبيعات آجل</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">INV-2023-0085</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">22,000.00</td>
+<td class="px-6 py-4 text-sm text-slate-300">0.00</td>
+<td class="px-6 py-4 text-sm font-black text-slate-900">56,550.00</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-400 hover:text-secondary"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<!-- Entry 5 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-slate-700">2023/10/01</td>
+<td class="px-6 py-4 text-sm font-bold text-slate-400 italic">رصيد أول المدة</td>
+<td class="px-6 py-4 text-sm text-slate-500">---</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">34,550.00</td>
+<td class="px-6 py-4 text-sm text-slate-300">0.00</td>
+<td class="px-6 py-4 text-sm font-black text-slate-900">34,550.00</td>
+<td class="px-6 py-4 text-left">
+<button class="text-slate-400 hover:text-secondary"><span class="material-symbols-outlined">info</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 bg-slate-50/50 flex justify-between items-center">
+<div class="text-xs text-slate-500">عرض 1 إلى 10 من أصل 158 حركة</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-white border border-slate-200 rounded text-xs hover:bg-slate-50">السابق</button>
+<button class="px-3 py-1 bg-primary text-white rounded text-xs">1</button>
+<button class="px-3 py-1 bg-white border border-slate-200 rounded text-xs hover:bg-slate-50">2</button>
+<button class="px-3 py-1 bg-white border border-slate-200 rounded text-xs hover:bg-slate-50">التالي</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Signature Glass Floating Action Button (FAB) -->
+<div class="fixed bottom-8 left-8 z-50">
+<button class="group flex items-center justify-center w-16 h-16 bg-[#435b9f]/80 backdrop-blur-xl rounded-full text-white shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:rotate-12">quick_reference_all</span>
+<!-- Tooltip-style mini menu hint -->
+<div class="absolute bottom-20 left-0 hidden group-hover:flex flex-col gap-2 w-48 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-2xl border border-white/50 animate-in slide-in-from-bottom-5">
+<div class="flex items-center gap-3 p-2 hover:bg-secondary/10 rounded-xl cursor-pointer">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="text-xs font-bold text-primary">إرسال بالبريد</span>
+</div>
+<div class="flex items-center gap-3 p-2 hover:bg-secondary/10 rounded-xl cursor-pointer">
+<span class="material-symbols-outlined text-secondary">share</span>
+<span class="text-xs font-bold text-primary">مشاركة الرابط</span>
+</div>
+</div>
+</button>
+</div>
+</body></html>

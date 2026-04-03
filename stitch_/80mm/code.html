@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>فاتورة حرارية - أبو ليلة ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1e",
+              "primary": "#00113a",
+              "secondary": "#775a19",
+              "surface-container-low": "#f2f4f6",
+              "surface-container-lowest": "#ffffff",
+              "background": "#f7f9fb",
+            },
+            fontFamily: {
+              "headline": ["Tajawal"],
+              "body": ["Tajawal"],
+              "label": ["Tajawal"]
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        @media print {
+            body { background: white; }
+            .no-print { display: none; }
+            .thermal-container { 
+                width: 80mm; 
+                margin: 0; 
+                padding: 5mm;
+                box-shadow: none;
+            }
+        }
+        .thermal-paper {
+            width: 80mm;
+            min-height: 120mm;
+            background: white;
+            color: black;
+            font-family: 'Tajawal', sans-serif;
+            padding: 10px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .dotted-line {
+            border-top: 1px dashed black;
+            margin: 8px 0;
+        }
+        .text-xs-thermal { font-size: 10px; }
+        .text-sm-thermal { font-size: 12px; }
+        .text-md-thermal { font-size: 14px; }
+        .text-lg-thermal { font-size: 18px; }
+    </style>
+</head>
+<body class="bg-surface py-10">
+<!-- Action Bar (Not for Print) -->
+<div class="max-w-[80mm] mx-auto mb-6 no-print flex justify-between items-center bg-white p-4 rounded-xl shadow-sm">
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-all" onclick="window.print()">
+<span class="material-symbols-outlined text-sm">print</span>
+            طباعة الفاتورة
+        </button>
+<span class="text-on-surface-variant text-sm font-medium">معاينة الفاتورة الحرارية</span>
+</div>
+<!-- Thermal Invoice Container -->
+<div class="thermal-paper thermal-container">
+<!-- Header / Logo -->
+<div class="flex flex-col items-center mb-4">
+<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-2 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="minimalist black and white circular logo for a retail shop named Abu Leila with elegant Arabic calligraphy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBodhXzglXj1KmLERgaqGj8BoYz0MCK3dk-_tg27TRNAXWNNhGudUCKEpwtzkL-yXhHbwpFqJ83VZtKn0dwiHuOn56GKmiqwbp2Dy8-y7H2SRhTm5d-fDn_ugb6E6D3lvqjUR8gM3q72_cbRiySp_0yclHgNIuFSvyCzGpy9zSmKLs0UUDmEJFkOK3BLHBj6XKAWbygJkgVRtxoz6PzpRWc66qCB8j9GVGUcwtXts7g3JunmON-kspSuLMzWwAbA416ug1RV8kZeYp"/>
+</div>
+<h1 class="text-lg-thermal font-black tracking-tighter">أبو ليلة ERP</h1>
+<p class="text-xs-thermal text-center font-medium uppercase">Alabaster Corp - Sovereign Enterprise</p>
+</div>
+<div class="dotted-line"></div>
+<!-- Invoice Info -->
+<div class="flex flex-col gap-1 mb-3">
+<div class="flex justify-between text-sm-thermal">
+<span class="font-bold">رقم الفاتورة:</span>
+<span>#INV-98721</span>
+</div>
+<div class="flex justify-between text-xs-thermal">
+<span>التاريخ:</span>
+<span>2023/11/15</span>
+</div>
+<div class="flex justify-between text-xs-thermal">
+<span>الوقت:</span>
+<span>04:30 PM</span>
+</div>
+<div class="flex justify-between text-xs-thermal">
+<span>الكاشير:</span>
+<span>أحمد محمد</span>
+</div>
+</div>
+<div class="dotted-line"></div>
+<!-- Items Table -->
+<table class="w-full text-sm-thermal mb-4">
+<thead>
+<tr class="border-b border-black">
+<th class="text-right py-1">الصنف</th>
+<th class="text-center py-1">الكمية</th>
+<th class="text-left py-1">الإجمالي</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-100">
+<td class="py-2">
+<div class="font-bold">قميص قطني ملكي</div>
+<div class="text-xs-thermal text-gray-600">450.00 EGP</div>
+</td>
+<td class="text-center">2</td>
+<td class="text-left font-bold">900.00</td>
+</tr>
+<tr class="border-b border-gray-100">
+<td class="py-2">
+<div class="font-bold">بنطال جينز كلاسيك</div>
+<div class="text-xs-thermal text-gray-600">750.00 EGP</div>
+</td>
+<td class="text-center">1</td>
+<td class="text-left font-bold">750.00</td>
+</tr>
+<tr>
+<td class="py-2">
+<div class="font-bold">حزام جلدي بني</div>
+<div class="text-xs-thermal text-gray-600">200.00 EGP</div>
+</td>
+<td class="text-center">1</td>
+<td class="text-left font-bold">200.00</td>
+</tr>
+</tbody>
+</table>
+<div class="dotted-line"></div>
+<!-- Totals Section -->
+<div class="flex flex-col gap-1 mb-4 px-1">
+<div class="flex justify-between text-sm-thermal">
+<span>الإجمالي الفرعي:</span>
+<span>1850.00 EGP</span>
+</div>
+<div class="flex justify-between text-sm-thermal">
+<span>الخصم (5%):</span>
+<span>-92.50 EGP</span>
+</div>
+<div class="flex justify-between text-sm-thermal">
+<span>ضريبة القيمة المضافة (14%):</span>
+<span>246.05 EGP</span>
+</div>
+<div class="dotted-line"></div>
+<div class="flex justify-between text-md-thermal font-black">
+<span>الإجمالي الكلي:</span>
+<span>2003.55 EGP</span>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="text-center mb-6">
+<p class="text-xs-thermal mb-1">شكراً لتسوقكم من أبو ليلة</p>
+<p class="text-xs-thermal">الرقم الضريبي: 456-123-789</p>
+<p class="text-xs-thermal">العنوان: القاهرة، شارع التسعين</p>
+</div>
+<!-- Barcode / QR Section -->
+<div class="flex flex-col items-center gap-2">
+<!-- Simulated Barcode with CSS Bars -->
+<div class="flex h-10 w-full items-end justify-center gap-[1px] bg-white overflow-hidden">
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[3px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[4px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[3px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[4px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[3px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[4px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[3px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[4px] h-full"></div>
+<div class="bg-black w-[2px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[3px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+<div class="bg-black w-[4px] h-full"></div>
+<div class="bg-black w-[1px] h-full"></div>
+</div>
+<span class="text-xs-thermal font-mono tracking-widest">INV-98721-2023</span>
+</div>
+<div class="mt-8 text-center border-t border-black pt-2">
+<p class="text-xs-thermal font-bold italic">Powered by Royal Alabaster ERP</p>
+</div>
+</div>
+</body></html>

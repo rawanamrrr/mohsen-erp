@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة الشيكات | Royal Alabaster Financial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#9ff88d",
+              "on-tertiary-fixed": "#002201",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#b3c5ff",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#4fa243",
+              "on-primary-container": "#758dd5",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#84db74",
+              "surface-variant": "#e0e3e5",
+              "surface-container": "#eceef0",
+              "secondary": "#775a19",
+              "primary-container": "#002366",
+              "on-primary-fixed-variant": "#2a4386",
+              "primary": "#00113a",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-fixed-variant": "#005303",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#e9c176",
+              "outline": "#757682",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#003101",
+              "on-secondary-container": "#785a1a",
+              "background": "#f7f9fb",
+              "on-primary-fixed": "#00174a",
+              "on-error": "#ffffff",
+              "outline-variant": "#c5c6d2",
+              "surface-dim": "#d8dadc",
+              "primary-fixed-dim": "#b3c5ff",
+              "secondary-fixed": "#ffdea5",
+              "tertiary": "#001a00",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-surface-variant": "#444650",
+              "on-background": "#191c1e",
+              "surface-container-highest": "#e0e3e5",
+              "surface": "#f7f9fb",
+              "surface-tint": "#435b9f",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f7f9fb",
+              "secondary-container": "#fed488",
+              "primary-fixed": "#dbe1ff",
+              "inverse-surface": "#2d3133",
+              "on-secondary-fixed": "#261900",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Tajawal", "Manrope"],
+              "body": ["Tajawal", "Plus Jakarta Sans"],
+              "label": ["Tajawal", "Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#ffffff] dark:bg-slate-900 shadow-sm flex flex-row-reverse justify-between items-center w-full px-8 h-16 sticky top-0 z-50">
+<div class="flex items-center gap-6 flex-row-reverse">
+<h1 class="text-xl font-bold text-[#00113a] dark:text-white">Royal Alabaster Financial</h1>
+<nav class="hidden md:flex flex-row-reverse gap-8 font-['Tajawal'] text-sm font-medium">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#775a19] transition-colors" href="#">الرئيسية</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#775a19] transition-colors" href="#">التقارير</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#775a19] transition-colors" href="#">الإعدادات</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container border-none rounded-xl pr-10 pl-4 py-2 text-sm focus:ring-2 focus:ring-secondary/50 w-64" placeholder="بحث سريع..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high" data-alt="professional portrait of a middle-eastern financial executive in a crisp white shirt with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQcS7SR78IQ9xloSVuPSdLR2p_RtzqY3olLIiwGpPYUJ73SO-ivsdOjuc01Ig-0tdwdEbKRCT7Z67PVNLwtjuV_WjXkKWTcr0we00JA8xGhIskYNYQqGiwy8YZttTk-ZZuchGZhtMk-sy2H_gs9u4Ku7U-rhvT9qj3HdvLzwbaTLNyxlZxpDVNGJ6mb0XyJcm6i3YHVX-yZxZ5s1dgMNVyvYvizdyx9Gw6WLUy9dNGR2XRHXiNIiLNmb4z3YaiEq40CIFcxd_4BjOf"/>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="fixed right-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col z-40 bg-[#f2f4f6] dark:bg-slate-800 shadow-lg border-l-4 border-[#775a19] font-['Tajawal'] text-sm font-semibold">
+<div class="p-6 border-b border-outline-variant/20">
+<div class="flex flex-row-reverse items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div class="text-right">
+<div class="text-lg font-black text-[#00113a] dark:text-white leading-tight">الموديول المالي</div>
+<div class="text-[10px] text-slate-500">نظام إدارة الموارد</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-4">
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 p-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>الخزينة</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 p-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span>البنوك</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 bg-white dark:bg-slate-700 text-[#00113a] dark:text-[#775a19] border-r-4 border-[#775a19] p-4 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>الشيكات</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant/20">
+<a class="flex flex-row-reverse items-center gap-3 text-error p-4 hover:bg-error-container/20 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 mr-64 p-8">
+<!-- Header Section -->
+<div class="flex flex-row-reverse justify-between items-end mb-8">
+<div class="text-right">
+<h2 class="text-3xl font-extrabold text-primary mb-2">إدارة الشيكات</h2>
+<p class="text-on-surface-variant max-w-md">إدارة وتتبع الشيكات الصادرة والواردة، ومراقبة حالة التحصيل مع البنوك المصرية.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-lowest text-secondary border border-secondary/20 px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-secondary/5 transition-all shadow-sm">
+<span class="material-symbols-outlined">download</span>
+                        تصدير Excel
+                    </button>
+<button class="bg-primary text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                        تسجيل شيك جديد
+                    </button>
+</div>
+</div>
+<!-- Stats Overview - Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-secondary">
+<div class="text-sm text-on-surface-variant mb-1">إجمالي الشيكات</div>
+<div class="text-2xl font-black text-primary">١,٢٥٠,٠٠٠ ج.م</div>
+<div class="text-xs text-secondary-fixed-dim mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        ١٢٪ زيادة عن الشهر الماضي
+                    </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-tertiary-fixed-dim">
+<div class="text-sm text-on-surface-variant mb-1">محصلة</div>
+<div class="text-2xl font-black text-on-tertiary-fixed">٨٥٠,٠٠٠ ج.م</div>
+<div class="text-xs text-on-tertiary-container mt-2">٢٤ شيك تم تحصيله</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-primary-container">
+<div class="text-sm text-on-surface-variant mb-1">تحت التحصيل</div>
+<div class="text-2xl font-black text-primary-container">٣٠٠,٠٠٠ ج.م</div>
+<div class="text-xs text-on-primary-container mt-2">١٠ شيكات جارية</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-error">
+<div class="text-sm text-on-surface-variant mb-1">مرفوضة</div>
+<div class="text-2xl font-black text-error">١٠٠,٠٠٠ ج.م</div>
+<div class="text-xs text-error mt-2">٣ شيكات تحتاج مراجعة</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="bg-surface-container-low p-4 rounded-2xl mb-6 flex flex-row-reverse items-center justify-between gap-4">
+<div class="flex flex-row-reverse items-center gap-4 flex-1">
+<div class="flex flex-col gap-1 min-w-[200px]">
+<label class="text-[10px] font-bold text-on-surface-variant px-2 uppercase tracking-wider">حالة الشيك</label>
+<select class="bg-white border-none rounded-lg text-sm shadow-sm focus:ring-secondary">
+<option>الكل</option>
+<option>محصل</option>
+<option>تحت التحصيل</option>
+<option>مرفوض</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant px-2 uppercase tracking-wider">تاريخ الاستحقاق (من)</label>
+<input class="bg-white border-none rounded-lg text-sm shadow-sm focus:ring-secondary" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-on-surface-variant px-2 uppercase tracking-wider">تاريخ الاستحقاق (إلى)</label>
+<input class="bg-white border-none rounded-lg text-sm shadow-sm focus:ring-secondary" type="date"/>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-lg font-bold hover:bg-secondary-fixed transition-all">
+                    تطبيق الفلترة
+                </button>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden border border-outline-variant/10">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="p-5 text-sm font-bold text-primary">رقم الشيك</th>
+<th class="p-5 text-sm font-bold text-primary">البنك</th>
+<th class="p-5 text-sm font-bold text-primary">تاريخ الاستحقاق</th>
+<th class="p-5 text-sm font-bold text-primary">المستفيد</th>
+<th class="p-5 text-sm font-bold text-primary">المبلغ</th>
+<th class="p-5 text-sm font-bold text-primary">الحالة</th>
+<th class="p-5 text-sm font-bold text-primary">إجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="p-5 text-sm font-bold">#CK-98234</td>
+<td class="p-5 text-sm">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+</div>
+<span>البنك الأهلي المصري</span>
+</div>
+</td>
+<td class="p-5 text-sm text-on-surface-variant">٢٠٢٤/٠٥/١٥</td>
+<td class="p-5 text-sm font-semibold">شركة النيل للمقاولات</td>
+<td class="p-5 text-sm font-black text-primary">٢٥٠,٠٠٠ ج.م</td>
+<td class="p-5 text-sm">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">محصل</span>
+</td>
+<td class="p-5 text-sm">
+<button class="text-secondary hover:underline font-bold">تفاصيل</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="p-5 text-sm font-bold">#CK-98235</td>
+<td class="p-5 text-sm">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+</div>
+<span>بنك مصر</span>
+</div>
+</td>
+<td class="p-5 text-sm text-on-surface-variant">٢٠٢٤/٠٦/٠١</td>
+<td class="p-5 text-sm font-semibold">مؤسسة الأهرام للتوزيع</td>
+<td class="p-5 text-sm font-black text-primary">١٢٠,٠٠٠ ج.م</td>
+<td class="p-5 text-sm">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">تحت التحصيل</span>
+</td>
+<td class="p-5 text-sm">
+<button class="text-secondary hover:underline font-bold">تفاصيل</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="p-5 text-sm font-bold">#CK-98236</td>
+<td class="p-5 text-sm">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+</div>
+<span>CIB - البنك التجاري الدولي</span>
+</div>
+</td>
+<td class="p-5 text-sm text-on-surface-variant">٢٠٢٤/٠٤/٢٨</td>
+<td class="p-5 text-sm font-semibold">محمود إبراهيم سيد</td>
+<td class="p-5 text-sm font-black text-primary">٤٥,٠٠٠ ج.م</td>
+<td class="p-5 text-sm">
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">مرفوض</span>
+</td>
+<td class="p-5 text-sm">
+<button class="text-secondary hover:underline font-bold">تفاصيل</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="p-5 text-sm font-bold">#CK-98237</td>
+<td class="p-5 text-sm">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+</div>
+<span>بنك الإسكندرية</span>
+</div>
+</td>
+<td class="p-5 text-sm text-on-surface-variant">٢٠٢٤/٠٦/١٠</td>
+<td class="p-5 text-sm font-semibold">مكتبة الإسكندرية المحدودة</td>
+<td class="p-5 text-sm font-black text-primary">٣١٥,٥٠٠ ج.م</td>
+<td class="p-5 text-sm">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">تحت التحصيل</span>
+</td>
+<td class="p-5 text-sm">
+<button class="text-secondary hover:underline font-bold">تفاصيل</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="p-5 text-sm font-bold">#CK-98238</td>
+<td class="p-5 text-sm">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+</div>
+<span>بنك QNB الأهلي</span>
+</div>
+</td>
+<td class="p-5 text-sm text-on-surface-variant">٢٠٢٤/٠٣/٢٠</td>
+<td class="p-5 text-sm font-semibold">الشركة العالمية للتجارة</td>
+<td class="p-5 text-sm font-black text-primary">٦٠٠,٠٠٠ ج.م</td>
+<td class="p-5 text-sm">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">محصل</span>
+</td>
+<td class="p-5 text-sm">
+<button class="text-secondary hover:underline font-bold">تفاصيل</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="bg-surface-container-low/50 p-4 flex flex-row-reverse justify-between items-center">
+<div class="text-sm text-on-surface-variant">عرض ٥ من أصل ١٢٤ شيك</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white shadow-sm border border-outline-variant/20 hover:bg-secondary hover:text-white transition-all">١</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white shadow-sm border border-outline-variant/20 hover:bg-secondary hover:text-white transition-all">٢</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white shadow-sm border border-outline-variant/20 hover:bg-secondary hover:text-white transition-all">٣</button>
+<span class="px-2">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white shadow-sm border border-outline-variant/20 hover:bg-secondary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Floating Action Button - Glassmorphism -->
+<button class="fixed bottom-8 left-8 w-16 h-16 bg-[#435b9f]/80 backdrop-blur-xl rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform">add</span>
+<div class="absolute right-full mr-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            إضافة سريعة
+        </div>
+</button>
+</body></html>

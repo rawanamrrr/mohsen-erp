@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>رويال ألباستر - سندات القبض والصرف</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&amp;family=Manrope:wght@800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#9ff88d",
+              "on-tertiary-fixed": "#002201",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#b3c5ff",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#4fa243",
+              "on-primary-container": "#758dd5",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#84db74",
+              "surface-variant": "#e0e3e5",
+              "surface-container": "#eceef0",
+              "secondary": "#775a19",
+              "primary-container": "#002366",
+              "on-primary-fixed-variant": "#2a4386",
+              "primary": "#00113a",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-fixed-variant": "#005303",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#e9c176",
+              "outline": "#757682",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#003101",
+              "on-secondary-container": "#785a1a",
+              "background": "#f7f9fb",
+              "on-primary-fixed": "#00174a",
+              "on-error": "#ffffff",
+              "outline-variant": "#c5c6d2",
+              "surface-dim": "#d8dadc",
+              "primary-fixed-dim": "#b3c5ff",
+              "secondary-fixed": "#ffdea5",
+              "tertiary": "#001a00",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-surface-variant": "#444650",
+              "on-background": "#191c1e",
+              "surface-container-highest": "#e0e3e5",
+              "surface": "#f7f9fb",
+              "surface-tint": "#435b9f",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f7f9fb",
+              "secondary-container": "#fed488",
+              "primary-fixed": "#dbe1ff",
+              "inverse-surface": "#2d3133",
+              "on-secondary-fixed": "#261900",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Tajawal", "Manrope"],
+              "body": ["Tajawal", "Plus Jakarta Sans"],
+              "label": ["Tajawal", "Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Tajawal', sans-serif; }
+        .glass-fab {
+            background: rgba(67, 91, 159, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed right-0 top-0 h-screen w-64 flex flex-col z-40 bg-[#f2f4f6] dark:bg-slate-800 shadow-lg border-l-4 border-[#775a19]">
+<div class="p-6 flex flex-col items-center border-b border-outline-variant/20">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="account_balance">account_balance</span>
+</div>
+<h1 class="text-lg font-black text-[#00113a] dark:text-white">الموديول المالي</h1>
+<p class="text-[10px] text-slate-500 font-medium tracking-widest">نظام إدارة الموارد</p>
+</div>
+<nav class="flex-1 mt-6">
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 p-4 hover:bg-[#ffffff]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-semibold text-sm">الخزينة</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 p-4 hover:bg-[#ffffff]/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-semibold text-sm">البنوك</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 bg-white dark:bg-slate-700 text-[#00113a] dark:text-[#775a19] border-r-4 border-[#775a19] p-4" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-semibold text-sm">الشيكات</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/20">
+<button class="w-full flex flex-row-reverse items-center gap-3 text-error p-6 hover:bg-error/5 transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-semibold text-sm">تسجيل الخروج</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="mr-64 p-8">
+<!-- TopNavBar Shell -->
+<header class="flex flex-row-reverse justify-between items-center w-full px-8 h-16 bg-[#ffffff] dark:bg-slate-900 shadow-sm mb-8 rounded-xl">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-[#00113a] dark:text-white">Royal Alabaster Financial</span>
+</div>
+</div>
+<div class="flex flex-row-reverse gap-8 items-center">
+<nav class="flex flex-row-reverse gap-6">
+<a class="text-slate-500 font-medium text-sm hover:text-[#775a19]" href="#">الرئيسية</a>
+<a class="text-[#775a19] font-bold border-b-2 border-[#775a19] pb-1 text-sm" href="#">التقارير</a>
+<a class="text-slate-500 font-medium text-sm hover:text-[#775a19]" href="#">الإعدادات</a>
+</nav>
+<div class="flex items-center gap-4 border-r pr-4 border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="professional male accountant avatar in business suit neutral background office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa7o5IOxTY5ipxb6I5E_CjqUYI30Ex87QYwthH-4KtPOyIyPkEGjT70BAVP1ZB1ViB3JUXmVyYqKmS1gm_JzZzHukglT_4puXTzptvNqGvdMedsTJ3LMnU-TMR9UhHMrpqo1xlcrVZWjYJbj0d2KIqWdRBOtUXHkDu_D_IV33H-nVU_0PdZ4QK4H2pu53j3Y8cxi0n8i0RrJ3h2vIUYr9KFD9kp82ZgR44UN6Y7oU12rSk1tUJu7GQ3ixB5JgkvobKGPQGAntOp0hK"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Form Section -->
+<div class="max-w-5xl mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-black text-primary mb-2">إصدار سند جديد</h2>
+<p class="text-secondary font-medium italic">توثيق المعاملات المالية لفرع القاهرة</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-primary font-bold flex items-center gap-2 shadow-sm hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+                        طباعة السند
+                    </button>
+<button class="px-8 py-2.5 rounded-xl bg-primary text-white font-bold flex items-center gap-2 shadow-lg hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="save">save</span>
+                        حفظ البيانات
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Form Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Primary Settings Card -->
+<div class="col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm border-r-4 border-primary">
+<div class="grid grid-cols-2 gap-8">
+<!-- Transaction Type -->
+<div class="space-y-3">
+<label class="block text-xs font-bold text-outline tracking-wider uppercase">نوع المعاملة</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer group">
+<input checked="" class="hidden peer" name="tx_type" type="radio"/>
+<div class="flex items-center justify-center gap-2 p-4 rounded-xl border-2 border-outline-variant peer-checked:border-secondary peer-checked:bg-secondary/5 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_downward">arrow_downward</span>
+<span class="font-bold text-on-surface">سند قبض</span>
+</div>
+</label>
+<label class="flex-1 cursor-pointer group">
+<input class="hidden peer" name="tx_type" type="radio"/>
+<div class="flex items-center justify-center gap-2 p-4 rounded-xl border-2 border-outline-variant peer-checked:border-error peer-checked:bg-error/5 transition-all">
+<span class="material-symbols-outlined text-error" data-icon="arrow_upward">arrow_upward</span>
+<span class="font-bold text-on-surface">سند صرف</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Date -->
+<div class="space-y-3">
+<label class="block text-xs font-bold text-outline tracking-wider uppercase">تاريخ المعاملة</label>
+<div class="relative">
+<input class="w-full p-4 rounded-xl border-outline-variant bg-surface-container-low focus:ring-secondary focus:border-secondary transition-all" type="date" value="2023-10-27"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<!-- Source/Beneficiary -->
+<div class="col-span-2 space-y-3">
+<label class="block text-xs font-bold text-outline tracking-wider uppercase">الجهة (عميل / مورد / جهة أخرى)</label>
+<div class="relative">
+<select class="w-full p-4 pr-12 rounded-xl border-outline-variant bg-surface-container-low appearance-none focus:ring-secondary focus:border-secondary">
+<option>اختر الجهة المستهدفة...</option>
+<option>شركة النيل للتوريدات</option>
+<option>محمود علي (عميل كاش)</option>
+<option>مصروفات مكتبية</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary" data-icon="person">person</span>
+</div>
+</div>
+<!-- Amount -->
+<div class="col-span-2 space-y-3">
+<label class="block text-xs font-bold text-outline tracking-wider uppercase">القيمة الإجمالية</label>
+<div class="relative">
+<input class="w-full p-6 text-3xl font-black text-primary rounded-xl border-outline-variant bg-surface-container-low text-center focus:ring-secondary focus:border-secondary" placeholder="0.00" type="text"/>
+<span class="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-outline">EGP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Method Card -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl p-8 shadow-sm border-r-4 border-secondary">
+<h3 class="text-xs font-bold text-outline tracking-wider uppercase mb-6">طريقة الدفع</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="text-secondary focus:ring-secondary" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+<span class="font-bold">نقدي (كاش)</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="text-secondary focus:ring-secondary" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance">account_balance</span>
+<span class="font-bold">تحويل بنكي</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-xl bg-secondary/10 border border-secondary cursor-pointer">
+<input checked="" class="text-secondary focus:ring-secondary" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-secondary" data-icon="receipt_long">receipt_long</span>
+<span class="font-bold">شيك بنكي</span>
+</label>
+</div>
+<div class="mt-8 p-4 bg-surface-container-high/50 rounded-xl space-y-3">
+<p class="text-[10px] text-outline font-bold uppercase">ملخص الحالة</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-xs font-bold text-on-surface">في انتظار التأكيد المالي</span>
+</div>
+</div>
+</div>
+<!-- Conditional Check Details (Visible for 'Check' method) -->
+<div class="col-span-12 bg-surface-container-low/50 backdrop-blur-md rounded-xl p-8 border-2 border-dashed border-outline-variant">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="fact_check">fact_check</span>
+<h3 class="text-lg font-bold text-primary">بيانات الشيك البنكي</h3>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline">رقم الشيك</label>
+<input class="w-full p-3 rounded-lg border-outline-variant bg-white focus:ring-secondary" placeholder="00000000" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline">اسم البنك</label>
+<select class="w-full p-3 rounded-lg border-outline-variant bg-white focus:ring-secondary">
+<option>البنك الأهلي المصري</option>
+<option>بنك مصر</option>
+<option>CIB</option>
+<option>بنك القاهرة</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-outline">تاريخ الاستحقاق</label>
+<input class="w-full p-3 rounded-lg border-outline-variant bg-white focus:ring-secondary" type="date"/>
+</div>
+</div>
+</div>
+<!-- Notes Area -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl p-8 shadow-sm border-r-4 border-outline">
+<div class="space-y-3">
+<label class="block text-xs font-bold text-outline tracking-wider uppercase">ملاحظات إضافية / البيان</label>
+<textarea class="w-full p-4 rounded-xl border-outline-variant bg-surface-container-low focus:ring-secondary focus:border-secondary" placeholder="اكتب تفاصيل المعاملة هنا..." rows="3"></textarea>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Signature Floating Action Button -->
+<button class="fixed bottom-10 left-10 w-16 h-16 rounded-full glass-fab text-white shadow-2xl flex items-center justify-center z-50 hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl" data-icon="help">help</span>
+</button>
+<!-- Side Decoration Tonal Block -->
+<div class="fixed left-0 top-0 bottom-0 w-1 bg-secondary/20"></div>
+</body></html>

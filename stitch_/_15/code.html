@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة صلاحيات المستخدمين - نظام أبو ليلة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Tajawal:wght@400;500;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#261900",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#9ff88d",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffdea5",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#785a1a",
+              "surface-variant": "#e0e3e5",
+              "on-primary-fixed-variant": "#2a4386",
+              "on-error": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "inverse-primary": "#b3c5ff",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#003101",
+              "tertiary": "#001a00",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              "outline-variant": "#c5c6d2",
+              "tertiary-fixed-dim": "#84db74",
+              "on-surface-variant": "#444650",
+              "on-primary-fixed": "#00174a",
+              "primary": "#00113a",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#002201",
+              "on-primary-container": "#758dd5",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "primary-fixed": "#dbe1ff",
+              "primary-container": "#002366",
+              "surface-container": "#eceef0",
+              "outline": "#757682",
+              "on-tertiary-container": "#4fa243",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed-variant": "#5d4201",
+              "secondary": "#775a19",
+              "inverse-surface": "#2d3133",
+              "surface": "#f7f9fb",
+              "on-tertiary-fixed-variant": "#005303",
+              "background": "#f7f9fb",
+              "surface-tint": "#435b9f",
+              "secondary-fixed-dim": "#e9c176",
+              "primary-fixed-dim": "#b3c5ff",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-container": "#fed488",
+              "surface-bright": "#f7f9fb"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "Tajawal"],
+              "body": ["Plus Jakarta Sans", "Tajawal"],
+              "label": ["Plus Jakarta Sans", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .bento-card {
+            background-color: #ffffff;
+            border-right: 4px solid #00113a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .bento-card-secondary {
+            border-right-color: #775a19;
+        }
+        .glass-fab {
+            background: rgba(67, 91, 159, 0.8);
+            backdrop-filter: blur(24px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-[#ffffff] dark:bg-slate-900 font-['Manrope','Tajawal'] font-bold text-[14px] tracking-tight shadow-sm fixed top-0 left-0 right-0 z-40">
+<div class="flex flex-row-reverse justify-between items-center w-full px-8 py-3">
+<div class="flex items-center gap-6">
+<div class="text-xl font-bold text-[#00113a] dark:text-white uppercase tracking-wider">Abu Leila ERP</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#00113a]/70 dark:text-slate-400 hover:text-[#775a19] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#00113a]/70 dark:text-slate-400 hover:text-[#775a19] transition-colors duration-200" href="#">Quick Access</a>
+<a class="text-[#00113a]/70 dark:text-slate-400 hover:text-[#775a19] transition-colors duration-200" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00113a]/70 dark:text-slate-400 cursor-pointer hover:text-[#775a19] transition-all">notifications</span>
+<span class="material-symbols-outlined text-[#00113a]/70 dark:text-slate-400 cursor-pointer hover:text-[#775a19] transition-all">help</span>
+<span class="material-symbols-outlined text-[#00113a]/70 dark:text-slate-400 cursor-pointer hover:text-[#775a19] transition-all">settings</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="corporate headshot of a professional male executive in a sharp navy suit with neutral background soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbPSTVUrURTfftOOqdO9weVjKlBomITNzjiR-tp1-1zd-3u9NN4KR7r5672SSdnCst14VvCVMw0ouT5tRrGT8ypkPve0dJ0KcYDsAco7dV4NlmOBzbp7su8ke5Ul7oOGs5jxQKlsl1OJw-jD3WY115CYJj-8041GNmZgXO2EwyX7BgTTeMfof4ax8RW8GcQsbpyU_tS84gosF_XNon0icI9tYnCFuI1E7y6BKXmPy_t-PHkKcr2LNA5SlUtECLA_SEpf-V0tYZh-Ms"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed top-0 right-0 h-full w-64 z-50 bg-[#f2f4f6] dark:bg-slate-800 border-l-4 border-[#775a19] shadow-lg flex flex-col h-full overflow-y-auto rtl font-['Tajawal'] text-[14px] font-medium">
+<div class="p-6 flex flex-col items-center border-b border-outline-variant/30 mb-4">
+<div class="w-16 h-16 bg-primary rounded-xl mb-3 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-3xl">shield_person</span>
+</div>
+<h1 class="text-lg font-black text-[#00113a] dark:text-white">أبو ليلة</h1>
+<p class="text-xs text-[#00113a]/60">نظام إدارة الموارد</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="flex-1 text-right">المخازن</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="flex-1 text-right">المشتريات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="flex-1 text-right">المبيعات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="flex-1 text-right">إدارة العملاء</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="flex-1 text-right">المالية</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="flex-1 text-right">الموارد البشرية</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-[#ffffff]/50 dark:hover:bg-slate-700/50 transition-all" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="flex-1 text-right">التقارير</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-3 bg-white dark:bg-slate-700 text-[#00113a] border-r-4 border-[#775a19] py-3 px-4 shadow-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="flex-1 text-right">الإعدادات</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant/30 mt-auto">
+<button class="w-full py-3 px-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg mb-4">
+<span class="material-symbols-outlined">person_add</span>
+                إضافة مستخدم جديد
+            </button>
+<a class="flex flex-row-reverse items-center gap-3 text-red-600 py-3 px-4 hover:bg-red-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="flex-1 text-right">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="mr-64 mt-[56px] p-8">
+<!-- Header & Breadcrumbs -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<nav class="flex items-center gap-2 text-xs font-bold text-secondary tracking-widest uppercase mb-2">
+<a class="hover:underline" href="#">الإعدادات</a>
+<span class="material-symbols-outlined text-[12px]">chevron_left</span>
+<span class="text-primary/60">الصلاحيات</span>
+</nav>
+<h2 class="text-3xl font-black text-primary font-headline tracking-tight">إدارة صلاحيات المستخدمين</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-6 py-2.5 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined">save</span>
+                    حفظ التعديلات
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-lg active:scale-95">
+<span class="material-symbols-outlined">refresh</span>
+                    استعادة الافتراضي
+                </button>
+</div>
+</div>
+<!-- Permissions Bento Card -->
+<section class="bento-card rounded-xl overflow-hidden mb-8">
+<div class="p-6 border-b border-surface-container-high bg-surface-container-low/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+</div>
+<div>
+<h3 class="font-bold text-primary">جدول الصلاحيات التفصيلي</h3>
+<p class="text-xs text-on-surface-variant">تخصيص مستويات الوصول لكل وحدة في النظام</p>
+</div>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pr-10 pl-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-secondary/50 w-64" placeholder="بحث عن مديول..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-right">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-[11px] font-black uppercase tracking-wider">
+<th class="p-5 text-right w-48 font-headline">اسم المديول</th>
+<th class="p-5 text-center">عرض</th>
+<th class="p-5 text-center">إضافة</th>
+<th class="p-5 text-center">تعديل</th>
+<th class="p-5 text-center">حذف</th>
+<th class="p-5 text-center">طباعة</th>
+<th class="p-5 text-center">تصدير</th>
+<th class="p-5 text-center">عرض الأسعار</th>
+<th class="p-5 text-center">تطبيق خصم</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<!-- Module: Inventory -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">inventory_2</span>
+<span class="font-bold text-primary">إدارة المخازن</span>
+</div>
+</td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+</tr>
+<!-- Module: Sales -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">point_of_sale</span>
+<span class="font-bold text-primary">المبيعات</span>
+</div>
+</td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+</tr>
+<!-- Module: Purchasing -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="font-bold text-primary">المشتريات</span>
+</div>
+</td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+</tr>
+<!-- Module: HR -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">groups</span>
+<span class="font-bold text-primary">الموارد البشرية</span>
+</div>
+</td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+</tr>
+<!-- Module: Accounting -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">account_balance</span>
+<span class="font-bold text-primary">الحسابات العامة</span>
+</div>
+</td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+<td class="p-5 text-center"><input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary" type="checkbox"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low/20 flex items-center justify-end">
+<div class="text-xs text-on-surface-variant italic">
+                    تم التحديث الأخير: 24 مايو 2024 - 10:30 صباحاً
+                </div>
+</div>
+</section>
+<!-- Sidebar Summary Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="bento-card bento-card-secondary p-6 rounded-xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div>
+<h4 class="text-xs font-black text-secondary uppercase tracking-widest mb-1">المسؤولين</h4>
+<p class="text-2xl font-bold text-primary">12 <span class="text-sm font-normal text-on-surface-variant">مستخدم</span></p>
+</div>
+</div>
+<div class="bento-card p-6 rounded-xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">history</span>
+</div>
+<div>
+<h4 class="text-xs font-black text-primary/60 uppercase tracking-widest mb-1">آخر التعديلات</h4>
+<p class="text-sm font-bold text-primary leading-tight">تعديل صلاحيات "أمين المخزن"</p>
+</div>
+</div>
+<div class="bento-card p-6 rounded-xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-3xl">lock_open</span>
+</div>
+<div>
+<h4 class="text-xs font-black text-on-tertiary-container/60 uppercase tracking-widest mb-1">صلاحيات نشطة</h4>
+<p class="text-2xl font-bold text-primary">45 <span class="text-sm font-normal text-on-surface-variant">قاعدة</span></p>
+</div>
+</div>
+</div>
+</main>
+<!-- Signature FAB -->
+<button class="fixed bottom-8 left-8 glass-fab w-14 h-14 rounded-full text-white flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">help_outline</span>
+</button>
+</body></html>

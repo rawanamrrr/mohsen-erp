@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>فاتورة أبو ليلى - Royal Alabaster ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed-dim": "#84db74",
+                        "primary": "#00113a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary": "#775a19",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c5c6d2",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#435b9f",
+                        "secondary-container": "#fed488",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed": "#00174a",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed": "#002201",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed-variant": "#2a4386",
+                        "on-secondary-container": "#785a1a",
+                        "secondary-fixed": "#ffdea5",
+                        "primary-container": "#002366",
+                        "tertiary": "#001a00",
+                        "on-tertiary-container": "#4fa243",
+                        "on-surface-variant": "#444650",
+                        "tertiary-fixed": "#9ff88d",
+                        "on-primary-container": "#758dd5",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b3c5ff",
+                        "on-secondary-fixed": "#261900",
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#757682",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#005303",
+                        "error": "#ba1a1a",
+                        "surface": "#f7f9fb",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#003101",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e"
+                    },
+                    fontFamily: {
+                        "headline": ["Tajawal", "Manrope"],
+                        "body": ["Tajawal", "Plus Jakarta Sans"],
+                        "label": ["Tajawal", "Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @media print {
+            body { background: white; }
+            .no-print { display: none; }
+            .a5-container { 
+                width: 148mm;
+                height: 210mm;
+                padding: 10mm;
+                box-shadow: none;
+            }
+        }
+        .a5-container {
+            width: 148mm;
+            min-height: 210mm;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface p-4 md:p-8">
+<!-- TopNavBar (Shared Component) - Transactional Context Suppression Logic Applied -->
+<!-- Suppression: This is a focused invoice view/print layout, TopNavBar is hidden to prioritize content canvas. -->
+<div class="max-w-4xl mx-auto flex flex-col gap-6">
+<!-- Controls (Non-Printable) -->
+<div class="no-print flex justify-between items-center bg-surface-container-low p-4 rounded-xl shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h1 class="font-headline font-bold text-lg text-primary">معاينة فاتورة أبو ليلى</h1>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl flex items-center gap-2 shadow-lg hover:opacity-90 transition-all" onclick="window.print()">
+<span class="material-symbols-outlined text-sm" data-icon="print">print</span>
+<span>طباعة الفاتورة</span>
+</button>
+</div>
+<!-- A5 Invoice Canvas -->
+<div class="a5-container bg-surface-container-lowest shadow-2xl relative overflow-hidden flex flex-col p-8 border-r-4 border-secondary">
+<!-- Watermark / Texture Rule -->
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header Section -->
+<div class="flex justify-between items-start mb-10 relative z-10">
+<div class="flex flex-col gap-1">
+<div class="text-2xl font-black text-primary font-headline tracking-tight">أبو ليلى ERP</div>
+<div class="text-[10px] uppercase tracking-widest text-secondary font-bold">Royal Alabaster Enterprise</div>
+</div>
+<div class="text-left flex flex-col items-end">
+<div class="bg-secondary px-3 py-1 text-on-secondary text-[12px] font-bold rounded-lg mb-2">فاتورة ضريبية</div>
+<div class="text-[14px] text-primary font-bold">رقم: #INV-2024-089</div>
+<div class="text-[12px] text-outline">التاريخ: 24 أكتوبر 2023</div>
+</div>
+</div>
+<!-- Client & Company Info Bento Layout -->
+<div class="grid grid-cols-2 gap-6 mb-10">
+<div class="p-4 bg-surface-container-low rounded-xl">
+<div class="text-[10px] text-secondary font-bold uppercase mb-2">جهة الإصدار</div>
+<div class="text-[14px] font-bold text-primary">شركة الملكية للأعمال</div>
+<div class="text-[12px] text-on-surface-variant leading-relaxed">
+                        شارع التسعين، التجمع الخامس<br/>
+                        القاهرة، جمهورية مصر العربية
+                    </div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-r-4 border-primary">
+<div class="text-[10px] text-secondary font-bold uppercase mb-2">مقدم إلى</div>
+<div class="text-[14px] font-bold text-primary">مؤسسة الأمل للتجارة</div>
+<div class="text-[12px] text-on-surface-variant leading-relaxed">
+                        العميل: م. أحمد المحمدي<br/>
+                        الرقم الضريبي: ٤٥٦-٧٨٩-١٢٣
+                    </div>
+</div>
+</div>
+<!-- Itemized List Table -->
+<div class="flex-grow">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="border-b border-surface-container-highest">
+<th class="py-3 text-[12px] font-bold text-secondary uppercase">الوصف</th>
+<th class="py-3 text-[12px] font-bold text-secondary uppercase px-4 text-center">الكمية</th>
+<th class="py-3 text-[12px] font-bold text-secondary uppercase px-4 text-left">السعر</th>
+<th class="py-3 text-[12px] font-bold text-secondary uppercase text-left">الإجمالي</th>
+</tr>
+</thead>
+<tbody class="text-[13px]">
+<tr class="border-b border-surface-container">
+<td class="py-4">
+<div class="font-bold text-primary">استشارات برمجية - نظام ERP</div>
+<div class="text-[11px] text-on-surface-variant">تهيئة قواعد البيانات السحابية</div>
+</td>
+<td class="py-4 px-4 text-center">١</td>
+<td class="py-4 px-4 text-left">١٢,٥٠٠.٠٠</td>
+<td class="py-4 text-left font-bold text-primary">١٢,٥٠٠.٠٠</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-4">
+<div class="font-bold text-primary">تدريب المستخدمين</div>
+<div class="text-[11px] text-on-surface-variant">دورة مكثفة لمدة ٣ أيام</div>
+</td>
+<td class="py-4 px-4 text-center">٥</td>
+<td class="py-4 px-4 text-left">١,٢٠٠.٠٠</td>
+<td class="py-4 text-left font-bold text-primary">٦,٠٠٠.٠٠</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-4">
+<div class="font-bold text-primary">رخصة سنوية - باقة Premium</div>
+<div class="text-[11px] text-on-surface-variant">دعم فني وتحديثات مستمرة</div>
+</td>
+<td class="py-4 px-4 text-center">١</td>
+<td class="py-4 px-4 text-left">٤,٥٠٠.٠٠</td>
+<td class="py-4 text-left font-bold text-primary">٤,٥٠٠.٠٠</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Totals Section -->
+<div class="mt-8 flex justify-end">
+<div class="w-1/2 flex flex-col gap-3">
+<div class="flex justify-between items-center text-[13px]">
+<span class="text-on-surface-variant">المجموع الفرعي</span>
+<span class="font-medium">٢٣,٠٠٠.٠٠ ج.م</span>
+</div>
+<div class="flex justify-between items-center text-[13px]">
+<span class="text-on-surface-variant">ضريبة القيمة المضافة (١٤٪)</span>
+<span class="font-medium">٣,٢٢٠.٠٠ ج.م</span>
+</div>
+<div class="flex justify-between items-center bg-primary p-3 rounded-xl shadow-lg mt-2">
+<span class="text-on-primary font-bold text-[14px]">الإجمالي النهائي</span>
+<span class="text-on-primary font-black text-[18px]">٢٦,٢٢٠.٠٠ ج.م</span>
+</div>
+</div>
+</div>
+<!-- Footer / Thank You -->
+<div class="mt-auto pt-10 flex justify-between items-end border-t border-surface-container-highest border-dashed">
+<div class="text-[11px] text-on-surface-variant leading-relaxed">
+<div class="font-bold text-secondary mb-1">ملاحظات:</div>
+                    يرجى سداد المبلغ في موعد أقصاه ١٠ أيام من تاريخ الفاتورة.<br/>
+                    يمكنكم الدفع عبر التحويل البنكي أو البطاقات الائتمانية.
+                </div>
+<div class="text-left flex flex-col items-end">
+<div class="text-[14px] font-bold text-primary mb-6 italic">شكراً لتعاملكم معنا</div>
+<div class="w-24 h-px bg-outline-variant mb-1"></div>
+<div class="text-[10px] text-outline">توقيع المسؤول</div>
+</div>
+</div>
+<!-- Signature Glass FAB Logic (Transactional Suppression Applied) -->
+<!-- FAB is suppressed as this is a formal printable document. -->
+</div>
+<!-- Sidebar (Shared Component) - Suppressed Logic Applied -->
+<!-- Suppression: The context is a focused task (invoice view/print), SideNavBar is suppressed. -->
+</div>
+</body></html>

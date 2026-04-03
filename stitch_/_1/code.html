@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تسجيل الدخول - أبو ليلة ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&amp;family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#775a19",
+              "surface-container": "#eceef0",
+              "tertiary-fixed-dim": "#84db74",
+              "surface-variant": "#e0e3e5",
+              "error-container": "#ffdad6",
+              "primary": "#00113a",
+              "on-primary-fixed-variant": "#2a4386",
+              "primary-container": "#002366",
+              "error": "#ba1a1a",
+              "on-surface": "#191c1e",
+              "tertiary-fixed": "#9ff88d",
+              "on-tertiary-fixed": "#002201",
+              "inverse-primary": "#b3c5ff",
+              "on-tertiary-container": "#4fa243",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#758dd5",
+              "tertiary-container": "#003101",
+              "on-secondary-container": "#785a1a",
+              "on-primary-fixed": "#00174a",
+              "background": "#f7f9fb",
+              "on-tertiary-fixed-variant": "#005303",
+              "inverse-on-surface": "#eff1f3",
+              "outline": "#757682",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#e9c176",
+              "on-error-container": "#93000a",
+              "surface-dim": "#d8dadc",
+              "outline-variant": "#c5c6d2",
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary": "#001a00",
+              "secondary-fixed": "#ffdea5",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "surface": "#f7f9fb",
+              "on-background": "#191c1e",
+              "on-primary": "#ffffff",
+              "surface-tint": "#435b9f",
+              "secondary-container": "#fed488",
+              "surface-bright": "#f7f9fb",
+              "inverse-surface": "#2d3133",
+              "primary-fixed": "#dbe1ff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#261900",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-surface-variant": "#444650"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "Tajawal"],
+              "body": ["Inter", "Tajawal"],
+              "label": ["Inter", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .no-line { border: none !important; }
+      .tonal-transition { transition: background-color 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col relative overflow-hidden">
+<!-- Subtle Background Visual -->
+<div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-container/10 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary-container/10 blur-[120px]"></div>
+</div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="w-full top-0 absolute z-50 bg-transparent text-[#00113a] dark:text-slate-100 font-['Tajawal','Manrope'] font-medium text-sm no-line tonal-transition flat no shadows">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto rtl">
+<div class="text-2xl font-bold text-[#00113a] dark:text-white tracking-tight">أبو ليلة</div>
+<div class="flex items-center gap-6">
+<a class="text-[#00113a]/70 dark:text-slate-400 hover:text-[#775a19] transition-colors duration-300 scale-95 active:scale-90 transition-transform" href="#">English</a>
+<span class="material-symbols-outlined text-lg">language</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-6 z-10">
+<div class="w-full max-w-[480px]">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,17,58,0.06)] p-8 md:p-12 border-none">
+<!-- Brand & Header -->
+<div class="text-center mb-10">
+<h1 class="font-headline font-extrabold text-3xl text-primary tracking-tight mb-2">أبو ليلة</h1>
+<p class="text-on-surface-variant font-medium text-sm">أهلاً بك مجدداً في نظام إدارة الموارد</p>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant px-1" for="email">البريد الإلكتروني أو اسم المستخدم</label>
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant/60 group-focus-within:text-primary transition-colors">person</span>
+</div>
+<input class="w-full h-14 bg-surface-container-low border-none rounded-lg pr-12 pl-4 text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-on-surface-variant/40" id="email" placeholder="أدخل بيانات الاعتماد" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-sm font-semibold text-on-surface-variant" for="password">كلمة المرور</label>
+<a class="text-xs text-secondary font-bold hover:underline" href="#">نسيت كلمة المرور؟</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant/60 group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="w-full h-14 bg-surface-container-low border-none rounded-lg pr-12 pl-12 text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-on-surface-variant/40" id="password" placeholder="••••••••" type="password"/>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center cursor-pointer text-on-surface-variant/60 hover:text-primary">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-3 px-1">
+<div class="relative flex items-center">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 bg-surface-container-low" id="remember" type="checkbox"/>
+</div>
+<label class="text-sm text-on-surface-variant cursor-pointer select-none" for="remember">تذكرني على هذا الجهاز</label>
+</div>
+<!-- Login Button -->
+<button class="w-full h-14 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-lg shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2" type="submit">
+<span>تسجيل الدخول</span>
+<span class="material-symbols-outlined text-xl">login</span>
+</button>
+</form>
+<!-- Additional Info -->
+<div class="mt-10 pt-8 border-t border-outline-variant/10 flex flex-col items-center gap-4">
+<p class="text-xs text-on-surface-variant/60">يتطلب هذا النظام صلاحيات وصول معتمدة</p>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></div>
+<div class="w-2 h-2 rounded-full bg-primary-fixed-dim"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bottom-0 absolute text-[#00113a]/50 dark:text-slate-500 font-['Tajawal','Inter'] text-xs font-normal no-line tonal-transition spacing-6 flat no shadows">
+<div class="flex flex-row-reverse justify-center gap-8 w-full py-8 px-4">
+<span>© 2024 أبو ليلة ERP. جميع الحقوق محفوظة</span>
+<div class="flex flex-row-reverse gap-6">
+<a class="text-[#00113a]/60 dark:text-slate-500 hover:text-[#00113a] dark:hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">المساعدة</a>
+<a class="text-[#00113a]/60 dark:text-slate-500 hover:text-[#00113a] dark:hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">اتصل بنا</a>
+<a class="text-[#00113a]/60 dark:text-slate-500 hover:text-[#00113a] dark:hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">الشروط والأحكام</a>
+<a class="text-[#00113a]/60 dark:text-slate-500 hover:text-[#00113a] dark:hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">الخصوصية</a>
+</div>
+</div>
+</footer>
+<!-- Decorative Image Layer (Visual Anchor) -->
+<div class="fixed top-1/2 left-0 -translate-y-1/2 opacity-5 pointer-events-none -translate-x-1/4 hidden lg:block">
+<img class="w-[600px] grayscale brightness-50" data-alt="minimalist abstract arabic calligraphy geometric patterns in navy blue and gold with high-end editorial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3I7LYcjK-vYplWOHzHMoFs7lPexpDLGZ0O6f2OlkjDi5wmIWknj9o2f99tmBFP9x72JNVMDebephmv2ZL_Ytl8YUqD8a_nTvRKqeOB8NU1v4Qo6GUdVdZwUNbBQwoOWgiinYhip_8rIi625lVLYxn4I4QPu2QGSTCmmRW0SQrsdpVn3rSRCbXExUMcQrdrqtbw9QC6MQ1UslmhrSeeCRG589QnKDL5UfcOsUd3gV0TD5BNea_aeWAOBCY1TwOq4tLm2qKiMu5HfrJ"/>
+</div>
+</body></html>

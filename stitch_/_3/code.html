@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام أبو ليلة ERP - دفع متعدد</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#005303",
+              "on-primary-container": "#758dd5",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-secondary-fixed-variant": "#5d4201",
+              "tertiary-fixed-dim": "#84db74",
+              "surface-container": "#eceef0",
+              "outline": "#757682",
+              "on-error-container": "#93000a",
+              "tertiary": "#001a00",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#ffdea5",
+              "tertiary-fixed": "#9ff88d",
+              "on-primary-fixed-variant": "#2a4386",
+              "primary-fixed": "#dbe1ff",
+              "outline-variant": "#c5c6d2",
+              "surface-tint": "#435b9f",
+              "on-tertiary-fixed": "#002201",
+              "surface": "#f7f9fb",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary": "#775a19",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-surface": "#2d3133",
+              "background": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "surface-dim": "#d8dadc",
+              "on-secondary-container": "#785a1a",
+              "on-tertiary-container": "#4fa243",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-container": "#003101",
+              "inverse-primary": "#b3c5ff",
+              "primary": "#00113a",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f2f4f6",
+              "inverse-on-surface": "#eff1f3",
+              "on-surface-variant": "#444650",
+              "on-primary-fixed": "#00174a",
+              "surface-bright": "#f7f9fb",
+              "error-container": "#ffdad6",
+              "primary-container": "#002366",
+              "on-secondary-fixed": "#261900",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "Tajawal"],
+              "body": ["Plus Jakarta Sans", "Tajawal"],
+              "label": ["Plus Jakarta Sans", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+      .headline-font { font-family: 'Manrope', 'Tajawal', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="bg-[#00113a] dark:bg-[#00081d] font-['Manrope','Tajawal'] font-bold text-sm docked full-width top-0 z-50 shadow-lg flex justify-between items-center w-full px-6 py-3 fixed">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-white">Abu Leila ERP</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#775a19] border-b-2 border-[#775a19] pb-1" href="#">الرئيسية</a>
+<a class="text-white/80 hover:text-white transition-colors" href="#">التقارير</a>
+<a class="text-white/80 hover:text-white transition-colors" href="#">الإعدادات</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-white/80 hover:bg-white/10 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-white/80 hover:bg-white/10 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="الملف الشخصي للمستخدم" data-alt="professional portrait of a middle-eastern businessman in a modern office setting, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH_w9ltN-RixpqWjirq1knHxqn_qzac9-ld55hsv2jduFmE48jP9pCvPYzMC7Nu_XQgVnRLh7cTGfE0gdkeOkIWZ85euXUFVjZptqksPTA1Q9_Oy2DcAEwrPVbnaeje6IXxLVb1pAI5YXShR8gzcY1Rm2HCTwjEkEXYU70ZDO18mbds73wHADkhAtS1r_TVmM-48_qF6TjnRPxBdVus434_Tu1axd7EOME_p_CfEvIdCjrfJa5_LCobynTjIi32rM0D-I5tBvxItlt"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="fixed right-0 top-0 h-full flex flex-col pt-20 pb-6 bg-[#f2f4f6] dark:bg-[#1a1c1e] w-64 shadow-sm z-40 hidden md:flex font-['Plus_Jakarta_Sans','Tajawal'] text-sm font-medium">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#00113a] dark:text-white leading-tight">أبو ليلة ERP</h2>
+<p class="text-[10px] text-slate-500">نظام إدارة الموارد</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-3">
+<div class="p-3 flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>المخزون</span>
+</div>
+<div class="p-3 flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>المشتريات</span>
+</div>
+<!-- Active State: Sales/POS -->
+<div class="p-3 flex items-center gap-3 bg-white dark:bg-[#00113a] text-[#00113a] dark:text-[#775a19] border-r-4 border-[#775a19] font-bold transition-transform duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span>المبيعات</span>
+</div>
+<div class="p-3 flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>العملاء</span>
+</div>
+<div class="p-3 flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>الحسابات</span>
+</div>
+</nav>
+<div class="px-3 mt-auto">
+<button class="w-full bg-primary text-white py-3 rounded-xl shadow-lg flex items-center justify-center gap-2 font-bold mb-4 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                نقطة بيع جديدة
+            </button>
+<div class="p-3 flex items-center gap-3 text-error hover:bg-error/10 transition-transform duration-200 cursor-pointer rounded-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>تسجيل الخروج</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas (POS Background) -->
+<main class="pt-24 pr-0 md:pr-64 min-h-screen p-6">
+<div class="grid grid-cols-12 gap-6 opacity-40 pointer-events-none select-none">
+<!-- Mock POS Interface Background -->
+<div class="col-span-8 space-y-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-r-4 border-primary">
+<h1 class="text-2xl font-black headline-font mb-4">فاتورة مبيعات رقم #12940</h1>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-surface-container">
+<span>منتج تجريبي أ</span>
+<span>500 ج.م</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-surface-container">
+<span>منتج تجريبي ب</span>
+<span>1000 ج.م</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-4 bg-surface-container-low p-6 rounded-xl h-fit">
+<div class="text-center mb-6">
+<p class="text-sm text-slate-500">إجمالي المطلوب</p>
+<h2 class="text-4xl font-black text-primary">1500 <span class="text-lg">ج.م</span></h2>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold">دفع</button>
+</div>
+</div>
+</main>
+<!-- Split Payment Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-primary/40 backdrop-blur-sm p-4">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<!-- Modal Header -->
+<div class="bg-[#00113a] p-6 text-white flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="split_screen">splitscreen</span>
+</div>
+<div>
+<h3 class="text-xl font-bold headline-font">توزيع مبلغ الدفع</h3>
+<p class="text-white/60 text-xs">يرجى تحديد المبالغ لكل وسيلة دفع</p>
+</div>
+</div>
+<button class="text-white/60 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-8">
+<!-- Total Amount Banner -->
+<div class="bg-surface-container-low rounded-xl p-6 flex justify-between items-center mb-8 border-r-4 border-secondary">
+<div>
+<p class="text-slate-500 text-sm font-medium">إجمالي قيمة الفاتورة</p>
+<h4 class="text-3xl font-black text-primary">1500.00 <span class="text-base font-bold">ج.م</span></h4>
+</div>
+<div class="text-left">
+<p class="text-slate-500 text-sm font-medium">المبلغ المتبقي</p>
+<h4 class="text-3xl font-black text-error">500.00 <span class="text-base font-bold">ج.م</span></h4>
+</div>
+</div>
+<!-- Payment Methods Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Cash Input -->
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+                            دفع نقدي (كاش)
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-4 text-lg font-bold text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0.00" type="number" value="500"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">ج.م</span>
+</div>
+</div>
+<!-- Visa Input -->
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+                            بطاقة بنكية (فيزا)
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-4 text-lg font-bold text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0.00" type="number" value="500"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">ج.م</span>
+</div>
+</div>
+<!-- Instapay Input -->
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+                            محفظة إلكترونية (Instapay)
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-4 text-lg font-bold text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0.00" type="number" value="0"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">ج.م</span>
+</div>
+</div>
+<!-- Credit/Later Input -->
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+                            دفع آجل (على الحساب)
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container border-none rounded-xl py-4 px-4 text-lg font-bold text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0.00" type="number" value="0"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">ج.م</span>
+</div>
+</div>
+</div>
+<!-- Progress/Status Bar -->
+<div class="mt-8 space-y-3">
+<div class="flex justify-between items-center text-sm font-bold">
+<span class="text-on-tertiary-fixed-variant">تم توزيع: 1000 ج.م</span>
+<span class="text-error">المتبقي: 500 ج.م</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all" style="width: 66%;"></div>
+</div>
+<p class="text-[11px] text-slate-400 text-center">يجب توزيع إجمالي المبلغ بالكامل لتفعيل زر التأكيد</p>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="p-6 bg-surface-container-low flex flex-col md:flex-row gap-4 border-t border-surface-container">
+<button class="flex-1 bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+                    تأكيد الدفع وطباعة
+                </button>
+<button class="px-8 py-4 bg-white text-slate-600 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 active:scale-[0.98] transition-all">
+                    إلغاء
+                </button>
+</div>
+</div>
+</div>
+<!-- Signature FAB (Quick Action) -->
+<button class="fixed bottom-8 left-8 w-16 h-16 bg-surface-tint/80 backdrop-blur-xl text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</button>
+</body></html>

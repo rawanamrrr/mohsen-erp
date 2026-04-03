@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تعريف الأصناف - نظام أبو ليلة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Tajawal:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffdea5",
+              "primary-container": "#002366",
+              "tertiary": "#001a00",
+              "on-secondary-container": "#785a1a",
+              "on-primary-fixed-variant": "#2a4386",
+              "surface-container-high": "#e6e8ea",
+              "on-primary-fixed": "#00174a",
+              "inverse-surface": "#2d3133",
+              "on-tertiary-fixed": "#002201",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#c5c6d2",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#435b9f",
+              "secondary-container": "#fed488",
+              "surface-container-highest": "#e0e3e5",
+              "secondary": "#775a19",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed": "#dbe1ff",
+              "surface-container": "#eceef0",
+              "on-surface": "#191c1e",
+              "tertiary-fixed-dim": "#84db74",
+              "primary": "#00113a",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e",
+              "tertiary-container": "#003101",
+              "surface-container-low": "#f2f4f6",
+              "surface": "#f7f9fb",
+              "primary-fixed-dim": "#b3c5ff",
+              "background": "#f7f9fb",
+              "surface-dim": "#d8dadc",
+              "on-tertiary-fixed-variant": "#005303",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#261900",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#757682",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed": "#9ff88d",
+              "on-primary-container": "#758dd5",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#b3c5ff",
+              "on-tertiary-container": "#4fa243",
+              "on-surface-variant": "#444650"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "Tajawal"],
+              "body": ["Inter", "Tajawal"],
+              "label": ["Inter", "Tajawal"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Tajawal', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-72 fixed right-0 top-0 border-l border-slate-200 dark:border-slate-800 bg-[#f2f4f6] dark:bg-slate-900 flex flex-col p-6 gap-2 shadow-xl shadow-blue-900/5 dark:shadow-none z-50">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold text-[#00113a] dark:text-white">نظام أبو ليلة</h1>
+<p class="text-xs text-slate-500 font-medium">الإدارة التنفيذية</p>
+</div>
+<nav class="flex-1 flex flex-col gap-2 overflow-y-auto no-scrollbar">
+<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-[#775a19] font-bold rounded-xl px-4 py-3 shadow-sm hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>المخازن</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>المشتريات</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>المبيعات</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>العملاء</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>المالية</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+<span>الموارد البشرية</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-[-4px] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>الإعدادات</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-2">
+<button class="flex items-center gap-3 text-primary font-bold py-3 px-4 bg-secondary-container rounded-xl justify-center mb-4 transition-transform active:scale-95">
+<span>التقارير السنوية</span>
+</button>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2 hover:bg-slate-200 rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span>الدعم الفني</span>
+</a>
+<a class="flex items-center gap-3 text-error px-4 py-2 hover:bg-error-container/30 rounded-lg text-sm font-bold" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pr-72 min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-8 py-3 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#00113a] dark:text-white tracking-tighter">أبو ليلة</span>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute right-3 text-slate-400" data-icon="search">search</span>
+<input class="pr-10 pl-4 py-2 bg-surface-container-low border-none rounded-full text-sm w-80 focus:ring-2 focus:ring-primary/20" placeholder="بحث سريع في النظام..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-['Tajawal'] font-bold text-sm tracking-tight flex items-center gap-2 hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    إضافة جديد
+                </button>
+<div class="flex items-center gap-3 text-slate-500 border-r border-slate-200 pr-4 mr-2">
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-left rtl:text-right">
+<p class="text-xs font-bold text-primary">أحمد علي</p>
+<p class="text-[10px] text-slate-400">المدير العام</p>
+</div>
+<img alt="صورة الملف الشخصي للمدير" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-fixed" data-alt="professional headshot of an executive man in a suit with subtle executive office background soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkHIKQrrLJMXG__n7lUNzvL3SEutQbwnG1lqgEr556Ki03KOt6H2UBQ2kEnszbN4ClA69CfRfm0lX4EK6LAMjHIVjuMP1DPzFx-2C8uZNvPnPF2irPZ8RL30d3de8DLSZDY3TyBi3pAa6Xr2JfUCqvI6h1zzoDb3X_X1yT0UA6Hwmh6PsSwxKFucxS_UCwZ4R3f5iKvwm5nqYr5rWh5WFCrypOlTJttfYbHTEmQiUmNSaW1gm4n00lhjFLNWc0tEUOxFUi9LqTBLby"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8">
+<!-- Page Header & Hero Section -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-4">
+<div>
+<h2 class="text-3xl font-black text-primary mb-2 font-headline">تعريف الأصناف</h2>
+<p class="text-on-surface-variant font-medium">إدارة المنتجات، الخامات، والأصول بنظرة واحدة.</p>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2.5 bg-primary text-white rounded-lg flex items-center gap-2 shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+                        إضافة صنف جديد
+                    </button>
+<button class="px-5 py-2.5 bg-surface-container-lowest text-primary border border-outline-variant/30 rounded-lg flex items-center gap-2 hover:bg-surface-container transition-all font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="barcode_scanner">barcode_scanner</span>
+                        طباعة باركود
+                    </button>
+<button class="px-5 py-2.5 bg-surface-container-lowest text-primary border border-outline-variant/30 rounded-lg flex items-center gap-2 hover:bg-surface-container transition-all font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="upload_file">upload_file</span>
+                        استيراد/تصدير
+                    </button>
+</div>
+</div>
+<!-- Dashboard Stats Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-transparent hover:border-primary/5 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-xl">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<span class="text-[10px] font-bold py-1 px-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full">+12%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">إجمالي الأصناف</p>
+<h3 class="text-2xl font-black text-primary font-headline mt-1">1,284</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-transparent hover:border-primary/5 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-fixed text-on-secondary-fixed rounded-xl">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<span class="text-[10px] font-bold py-1 px-2 bg-error-container text-on-error-container rounded-full">حرج</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">أصناف تحت حد الطلب</p>
+<h3 class="text-2xl font-black text-primary font-headline mt-1">24</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-transparent hover:border-primary/5 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed text-on-tertiary-fixed rounded-xl">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">قيمة المخزون الكلية</p>
+<h3 class="text-2xl font-black text-primary font-headline mt-1">4.2M <span class="text-sm font-bold opacity-60">ج.م</span></h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-transparent hover:border-primary/5 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-xl">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">التصنيفات الرئيسية</p>
+<h3 class="text-2xl font-black text-primary font-headline mt-1">16</h3>
+</div>
+</div>
+<!-- Filtering & Search Section -->
+<div class="bg-surface-container-low p-6 rounded-2xl mb-8 flex flex-wrap gap-4 items-end">
+<div class="flex-1 min-w-[240px]">
+<label class="block text-xs font-bold text-on-surface-variant mb-2 mr-1">بحث في الأصناف</label>
+<div class="relative">
+<input class="w-full bg-white border-none rounded-xl py-3 pr-11 text-sm focus:ring-2 focus:ring-secondary" placeholder="اسم الصنف، الكود، أو الباركود..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+</div>
+</div>
+<div class="w-48">
+<label class="block text-xs font-bold text-on-surface-variant mb-2 mr-1">التصنيف</label>
+<select class="w-full bg-white border-none rounded-xl py-3 text-sm focus:ring-2 focus:ring-secondary">
+<option>الكل</option>
+<option>خامات أولية</option>
+<option>منتج نهائي</option>
+<option>تعبئة وتغليف</option>
+</select>
+</div>
+<div class="w-48">
+<label class="block text-xs font-bold text-on-surface-variant mb-2 mr-1">الحالة</label>
+<select class="w-full bg-white border-none rounded-xl py-3 text-sm focus:ring-2 focus:ring-secondary">
+<option>نشط</option>
+<option>تحت حد الطلب</option>
+<option>منتهي</option>
+</select>
+</div>
+<button class="bg-white text-primary p-3 rounded-xl hover:bg-slate-50 border border-slate-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface-container-lowest rounded-3xl shadow-xl shadow-primary/5 overflow-hidden border border-slate-100">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-[13px] font-bold">
+<th class="px-6 py-5">الصورة</th>
+<th class="px-6 py-5">اسم الصنف / الكود</th>
+<th class="px-6 py-5">الباركود</th>
+<th class="px-6 py-5">التصنيف</th>
+<th class="px-6 py-5 text-center">النوع / اللون</th>
+<th class="px-6 py-5">التكلفة</th>
+<th class="px-6 py-5">البيع</th>
+<th class="px-6 py-5">الرصيد</th>
+<th class="px-6 py-5 text-left">إجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Table Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-6 py-4">
+<img alt="خامة قطن عضوي" class="w-12 h-12 rounded-lg object-cover bg-slate-100" data-alt="close up of premium white cotton fabric texture on a roll commercial product photography soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC2eLdH10ALCeA0VHLW-QTeVWSWETvMVd4ZmaUVImLAMH7zE0JAyEFDCclHzeFhUpG2AsP8gIh56IhVWbZtYNHXCF6iOTqilN26Y6nWXs-vlv3hKUNSb6I2bRSca9Xu9c42_FOA8-1jQFp1pPtxR6QXLy9-mmk-g5oQCImXxjXDFAMdXywItfSU60T3yKD9kP3JwxWVbfgl6HCdbXpGpY2h_9SaLYSb5-voOxSO0b1NxPEle8EItACNGY2XA3Nx21dIeRkdzKEUGy1"/>
+</td>
+<td class="px-6 py-4">
+<div class="font-bold text-primary">قماش قطن سوبر رويال</div>
+<div class="text-[10px] text-slate-400 font-headline tracking-widest mt-1">SKU-AL-2024-001</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-on-surface-variant">6221234567890</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary-fixed text-primary text-[11px] font-bold rounded-full">خامات أولية</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="text-xs font-bold text-on-surface-variant">قماش / أبيض</div>
+<div class="text-[10px] text-slate-400 mt-1">مقاس: رول 50م</div>
+</td>
+<td class="px-6 py-4 font-headline font-bold text-primary">850.00 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4 font-headline font-bold text-secondary">1,150.00 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-bold">42 رول</span>
+</div>
+<div class="text-[9px] text-slate-400 mt-1">حد الطلب: 10</div>
+</td>
+<td class="px-6 py-4 text-left">
+<div class="flex justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-secondary hover:bg-secondary-fixed/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 (Low Stock Example) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-6 py-4">
+<img alt="سحاب نحاسي" class="w-12 h-12 rounded-lg object-cover bg-slate-100" data-alt="macro photo of high quality gold metal zippers arranged neatly professional accessories photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-E8Wao8C1ZALE_RH9K4zAvHPLRgtFjf3NhbPSFPWTcorvDOEi8HaKwM_hbduZa_ktN-gk-wxdfo84KkdpTTYmsJ8mfSDnJBBM9rhqRCAVzaCVdxxu_HPhucKaeK_47dmwA-NPXcS_ptNK814sXMIeQMItCAacHzZZoZKnW2qypaSpC0j__wyXCzxJ78q0AhITxe5T4uXnYp7NRdH5ywXboGWRJxqEXyVmjCQLUJv9OfLtwDf6A1KRKriys5D-Js3YstdOXTXPQzxd"/>
+</td>
+<td class="px-6 py-4">
+<div class="font-bold text-primary">سحاب نحاسي فاخر 20سم</div>
+<div class="text-[10px] text-slate-400 font-headline tracking-widest mt-1">SKU-AL-ACC-442</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-on-surface-variant">6229876543210</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-full">إكسسوارات</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="text-xs font-bold text-on-surface-variant">معدن / ذهبي</div>
+<div class="text-[10px] text-slate-400 mt-1">مقاس: 20سم</div>
+</td>
+<td class="px-6 py-4 font-headline font-bold text-primary">12.50 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4 font-headline font-bold text-secondary">25.00 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-bold text-error">150 قطعة</span>
+</div>
+<div class="text-[9px] text-error mt-1 font-bold">تحت حد الطلب (500)</div>
+</td>
+<td class="px-6 py-4 text-left">
+<div class="flex justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-secondary hover:bg-secondary-fixed/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-6 py-4">
+<img alt="جاكيت بدلة" class="w-12 h-12 rounded-lg object-cover bg-slate-100" data-alt="professional fashion photography of a tailored navy blue blazer on a mannequin white studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhyoxuGJOvOmgmeVAyFiaTnEuVgSx-_QDcmAZrmmnzRmjGWRdaEateO3ah6TsZPv7ZVTEvJpG7z-dvScxD3C79nnrk-pktRf6CRqvsUeVLXLHBLKg7-oJYSPQowQB2ikVbXuDMPYMtSblt1GTMWUwRrcw20LkzG9hwK3frtyl4X1Egsh3ULUFdTvbjh1TzBS4GLRSEjxK2TPnHiXutWy7bTe-BQ8lGdOk9kRrjQP1r_RGua8a6UeekJ4rpnDeRmyGsaE6_asvGbgJ4"/>
+</td>
+<td class="px-6 py-4">
+<div class="font-bold text-primary">بليزر رسمي "ليلة" موديل 2024</div>
+<div class="text-[10px] text-slate-400 font-headline tracking-widest mt-1">SKU-AL-PROD-99</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-on-surface-variant">6225566778899</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-on-tertiary-container text-white text-[11px] font-bold rounded-full">منتج نهائي</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="text-xs font-bold text-on-surface-variant">ملابس / كحلي</div>
+<div class="text-[10px] text-slate-400 mt-1">مقاس: L, XL</div>
+</td>
+<td class="px-6 py-4 font-headline font-bold text-primary">1,450.00 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4 font-headline font-bold text-secondary">2,800.00 <span class="text-[10px] opacity-50">ج.م</span></td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-bold">120 قطعة</span>
+</div>
+<div class="text-[9px] text-slate-400 mt-1">حد الطلب: 20</div>
+</td>
+<td class="px-6 py-4 text-left">
+<div class="flex justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-secondary hover:bg-secondary-fixed/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-8 py-5 bg-surface-container-low flex justify-between items-center">
+<div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant">
+<span>عرض 1 إلى 10 من أصل 1284 صنف</span>
+<div class="flex items-center gap-2 mr-4">
+<span>عرض:</span>
+<select class="bg-white border-none text-[11px] rounded px-2 py-1 focus:ring-0">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+</div>
+<div class="flex gap-1">
+<button class="p-2 hover:bg-white rounded-lg transition-colors text-slate-400">
+<span class="material-symbols-outlined" data-icon="first_page">first_page</span>
+</button>
+<button class="p-2 hover:bg-white rounded-lg transition-colors text-slate-400">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-8 h-8 bg-primary text-white rounded-lg font-bold text-xs">1</button>
+<button class="w-8 h-8 hover:bg-white rounded-lg font-bold text-xs transition-colors">2</button>
+<button class="w-8 h-8 hover:bg-white rounded-lg font-bold text-xs transition-colors">3</button>
+<button class="p-2 hover:bg-white rounded-lg transition-colors text-slate-600">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 hover:bg-white rounded-lg transition-colors text-slate-600">
+<span class="material-symbols-outlined" data-icon="last_page">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contextual FAB (Only for Main Dashboard Action) -->
+<button class="fixed bottom-10 left-10 w-16 h-16 bg-primary/90 hover:bg-primary text-white rounded-full flex items-center justify-center shadow-2xl glass-panel active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:rotate-90" data-icon="add">add</span>
+</button>
+</div>
+</main>
+</body></html>

@@ -27,7 +27,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="ابحث عن منتج أو عميل..."
-            className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-sm"
           />
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function Header() {
             onClick={() => setShowDropdown(!showDropdown)}
             className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
-            <div className="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 bg-primary text-cream rounded-full flex items-center justify-center text-sm font-bold">
               {user.avatar}
             </div>
             <div className="text-right">

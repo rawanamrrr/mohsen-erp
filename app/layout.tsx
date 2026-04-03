@@ -11,13 +11,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html dir="rtl" lang="ar">
       <head>
-        <title>أبو ليلة ERP - نظام إدارة المشاريع</title>
+        <title>MOHSEN ERP - for casual women clothes</title>
         <meta name="description" content="نظام إدارة الموارد والمخزون للمتاجر والتصنيع" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-slate-50">
+      <body className="bg-cream">
         <Provider store={store}>
-          <div className="flex h-screen bg-slate-50">
+          <div className="flex h-screen bg-cream">
             {/* Sidebar Navigation */}
             <Sidebar />
             

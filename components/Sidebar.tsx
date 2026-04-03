@@ -124,7 +124,7 @@ function SidebarItem({ item }: { item: NavItem }) {
       {hasChildren ? (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full flex items-center justify-between px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+          className="w-full flex items-center justify-between px-4 py-2.5 text-gray-700 hover:bg-cream hover:text-secondary rounded-lg transition-colors text-sm"
         >
           <span className="flex items-center gap-3">
             <span className="text-gray-600">{item.icon}</span>
@@ -139,7 +139,7 @@ function SidebarItem({ item }: { item: NavItem }) {
       ) : (
         <Link
           href={item.href || '#'}
-          className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors text-sm font-medium"
+          className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-cream hover:text-secondary rounded-lg transition-colors text-sm font-medium"
         >
           <span className="text-gray-600">{item.icon}</span>
           <span>{item.label}</span>
@@ -153,7 +153,7 @@ function SidebarItem({ item }: { item: NavItem }) {
             <Link
               key={idx}
               href={child.href || '#'}
-              className="block px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg text-sm transition-colors hover:text-blue-600"
+              className="block px-4 py-2 text-gray-600 hover:bg-cream rounded-lg text-sm transition-colors hover:text-secondary"
             >
               {child.label}
             </Link>
@@ -168,9 +168,14 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 overflow-y-auto flex flex-col h-full">
       {/* Logo Section */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-blue-900 to-blue-800 text-white">
-        <h1 className="text-xl font-bold text-center">أبو ليلة ERP</h1>
-        <p className="text-xs text-blue-200 text-center mt-1">نظام إدارة المشاريع</p>
+      <div className="p-4 border-b border-primary bg-primary text-secondary flex flex-col items-center justify-center">
+        {/* Placeholder SVG for the logo mark based on brand colors */}
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-2">
+          <path d="M50 15 C30 15 15 30 15 50 C15 70 30 85 50 85 C70 85 85 70 85 50 C85 30 70 15 50 15 Z M50 25 C64 25 75 36 75 50 C75 64 64 75 50 75 C36 75 25 64 25 50 C25 36 36 25 50 25 Z" fill="#C58B79" fillOpacity="0.8"/>
+          <path d="M40 70 Q 50 30 60 70 M30 50 Q 50 20 70 50" stroke="#C58B79" strokeWidth="3" strokeLinecap="round" fill="none"/>
+        </svg>
+        <h1 className="text-xl font-serif tracking-widest text-[#F7F4EB] font-bold text-center uppercase">MOHSEN</h1>
+        <p className="text-[10px] text-secondary tracking-widest text-center mt-1 uppercase">for casual women clothes</p>
       </div>
 
       {/* Navigation */}

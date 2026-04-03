@@ -8,8 +8,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#001f3f',
-        secondary: '#d4af37',
+        primary: '#2A2F35',
+        secondary: '#C58B79',
+        cream: '#F7F4EB',
+        brand: '#C58B79',
       },
     },
   },

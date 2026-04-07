@@ -7,7 +7,6 @@ import {
   addToCart,
   removeFromCart,
   clearCart,
-  setCustomer,
   createInvoice,
 } from '@/lib/slices/salesSlice';
 import { Printer, X, Plus, Minus, Trash2 } from 'lucide-react';

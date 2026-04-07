@@ -9,12 +9,12 @@ import {
   clearCart,
   createInvoice,
 } from '@/lib/slices/salesSlice';
-import { Printer, X, Plus, Minus, Trash2 } from 'lucide-react';
+import { Printer, X, Plus, Minus } from 'lucide-react';
 
 export default function POSPage() {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.inventory.products);
-  const { currentCart, currentCustomer } = useSelector((state: RootState) => state.sales);
+  const { currentCart } = useSelector((state: RootState) => state.sales);
   const customers = useSelector((state: RootState) => state.customers.customers);
 
   const [barcodeInput, setBarcodeInput] = useState('');

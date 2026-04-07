@@ -2,7 +2,7 @@
 
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { TrendingUp, AlertCircle, Users, DollarSign } from 'lucide-react';
+import { AlertCircle, Users, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Dashboard() {

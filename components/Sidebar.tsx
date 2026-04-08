@@ -19,7 +19,7 @@ import {
 interface NavItem {
   label: string;
   href?: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   children?: NavItem[];
 }
 
@@ -147,7 +147,7 @@ function SidebarItem({ item }: { item: NavItem }) {
       )}
 
       {/* Submenu */}
-      {hasChildren && isExpanded && (
+      {hasChildren && isExpanded && item.children && (
         <div className="pr-4 py-1 space-y-0.5">
           {item.children.map((child, idx) => (
             <Link
